@@ -57,6 +57,8 @@ class LoginSessionForm extends React.Component {
   }
 
   render() {
+
+    
     return (
       <div className="existing-user-form">
         <div className="header">
@@ -97,9 +99,16 @@ class LoginSessionForm extends React.Component {
               required
             />
             {this.renderErrors()}
-            <button className="login-btn" onClick={this.handleSubmit}>
+            {/* <button className="login-btn" onClick={this.handleSubmit}>
               {this.props.formType}
-            </button>
+            </button> */}
+            <form onSubmit={this.handleSubmit}>
+            <input
+              className="login-btn"
+              type="submit"
+              value={this.props.formType}
+            />
+            </form>
             <button className="demo-btn" onClick={this.demoLogin}>
               Demo Login
             </button>
