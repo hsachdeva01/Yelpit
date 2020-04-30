@@ -111,7 +111,6 @@
 }
 
 .sign-up-legal{
-  padding-left: 20px;
   padding-top: 5px;
   padding-bottom: 15px
 }
@@ -132,6 +131,7 @@
 
 .sign-up-demo-btn:hover{
   cursor: pointer;
+  background-color: rgba(0, 89, 255, 0.815);
 }
 
 .sign-up-form .signup-email input {
@@ -206,7 +206,7 @@
 }
 
 .sign-up-text-form{
-  padding-left: 100px
+  padding-left: 120px
 }
 .sign-up-form{
   margin-left: 110px;
@@ -219,3 +219,18 @@
   background-position-x: 700px;
   background-position-y: 200px;
 }
+
+// .divider{
+//   margin: 0 287px;
+//   display: block;
+// }
+
+// .divider-line{
+//   width: 124px;
+//   font-size: 14px;
+//   line-height: 7px;
+//   margin-bottom: 7px;
+//   padding-left: 290px;
+//   border-bottom: solid #ccc 1px;
+//   display: block;
+// }
