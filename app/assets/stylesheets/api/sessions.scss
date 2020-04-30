@@ -1,3 +1,21 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a#text.login-page-logo{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 55px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-top: 150px;
+}
+
+a#text{
+    text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 55px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-top: 150px;
+}

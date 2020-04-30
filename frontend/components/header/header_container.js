@@ -5,12 +5,12 @@ import Header from './header'
 
 
 
-const mapStateToProps = ({ session, entities }) => ({
-  currentUser: entities.users[session.id]
+const mapStateToProps = state => ({
+  currentUser: state.entities.users[state.session.id]
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: dispatch(logout())
+  logout: () => dispatch(logout())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

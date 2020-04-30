@@ -1,0 +1,221 @@
+.session-form{
+  padding: 100px;
+  background-image: url(https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 700px;
+}
+
+.login-text{
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200px;
+  font-size: 20px;
+  padding-left: 160px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  //  background-image: url(https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png)
+}
+
+.header{
+  text-align: center;
+  background-color: #d32323;
+  padding: 20px;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.login-btn{
+  color: white;
+  padding: 7px 83px;
+  background-color: red;
+  display: block;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 18px;
+}
+.login-btn:hover{
+  cursor: pointer;
+}
+
+.login-form input{
+  margin: 5px;
+  padding: 5px 30px;
+  margin-left: 23px;
+  padding: 6px 36px;
+}
+
+.signup-error{
+  color: red;
+  list-style-type: circle;
+}
+
+.login-error{
+  color: red;
+  display: list-item;
+}
+
+
+.sign-up-notification {
+  padding-left: 160px;
+  font-weight: bold;
+}
+
+.sign-up-text-link {
+  color: rgb(0, 68, 255);
+  // padding-left: 120px;
+}
+
+.sign-up-text-link:hover {
+  text-decoration: underline
+}
+
+.login-form{
+  padding-left: 100px;
+  padding-top: 20px;
+}
+
+.demo-btn{
+  color: white;
+  padding: 7px 60px;
+  background-color: rgba(0, 89, 255, 0.815);
+  display: block;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 18px;
+}
+
+.term-policy-text{
+  padding-top: 15px;
+  padding-left: 75px;
+}
+
+
+.sign-up-for-yelpit{
+  padding-top: 35px;
+  padding-left: 80px;
+  color: red;
+  font-weight: bold;
+  font-size: 2;
+  font-size: 20px;
+  font-weight: 200px;
+ }
+.sign-up-connect{
+  padding-left: 50px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.sign-up-legal{
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 15px
+}
+
+.sign-up-demo-btn{
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  color: white;
+  padding: 7px 123px;
+  background-color: rgba(0, 89, 255, 0.815);
+  display: block;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 70px;
+  margin-left: 130px;
+}
+
+.sign-up-demo-btn:hover{
+  cursor: pointer;
+}
+
+.sign-up-form .signup-email input {
+  margin: 5px;
+  margin-left: 23px;
+  padding: 6px 36px;
+  width: 255px;
+}
+
+.sign-up-form .signup-password input {
+  margin: 5px;
+  margin-left: 23px;
+  padding: 6px 36px;
+  width: 255px;
+}
+
+.sign-up-form .signup-zipcode input {
+  margin: 5px;
+  margin-left: 23px;
+  padding: 6px 36px;
+  width: 255px;
+}
+
+.sign-up-form .signup-birthday input {
+  margin: 5px;
+  margin-left: 23px;
+  padding: 6px 36px;
+  width: 255px;
+}
+
+.sign-up-form .sign-up-name input{
+  padding-left: 20px;
+  margin: 5px;
+  margin-left: 23px;
+  padding: 6px 11px;
+}
+
+.signup-birthday #birthday {
+  padding-left: 21px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.sign-up-btn button{
+  color: white;
+  padding: 9px 140px;
+  background-color: red;
+  display: block;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 18px;
+}
+
+.sign-up-btn button:hover{
+  cursor: pointer;
+}
+
+.already-on-yelpit {
+  padding-left: 215px;
+  font-size: 13px;
+  color: gray;
+  font-weight: bold;
+}
+
+.already-on-yelpit p a{
+  color: rgb(0, 68, 255);
+}
+
+.already-on-yelpit p a:hover{
+  text-decoration: underline;
+}
+
+.sign-up-text-form{
+  padding-left: 100px
+}
+.sign-up-form{
+  margin-left: 110px;
+}
+
+.new-user-form{
+  background-image: url(https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 700px;
+  background-position-y: 200px;
+}

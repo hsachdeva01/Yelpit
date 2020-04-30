@@ -1,0 +1,97 @@
+.header-mainpage{
+  background-image: url(https://cache.marriott.com/marriottassets/marriott/SFODT/sfodt-view-9722-hor-clsc.jpg);
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  min-width: 100%;
+  min-height: 100%;
+  margin-bottom: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.header-right{
+  float: right;
+  justify-content: space-between;
+  height: 10px;
+}
+
+.application-name {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 55px;
+    color: red;
+    text-shadow: 7px 2px 4px white;
+    margin-top: 150px;
+}
+
+.signup {
+  padding: 10px 25px 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  display:inline-block;
+  margin-right:5px;
+  text-decoration: none;
+}
+
+.login {
+  display:inline-block;
+  margin-right:20px;
+  color: white;
+  margin-top: 30px;
+  padding: 10px 25px 10px;
+}
+
+.login:hover {
+  border-bottom: 3px solid;
+}
+
+.signup:hover{
+  background-color: lightgray;
+}
+
+
+.github-btn{
+  color: white;
+  margin-top: 30px;
+  display: inline-block;
+  padding: 10px 25px 10px;
+
+}
+.github-btn:hover {
+  border-bottom: 3px solid;
+}
+
+.linkedin-btn{
+  color: white;
+  display: inline-block;
+  padding: 10px 25px 10px;
+}
+
+.linkedin-btn:hover{
+  border-bottom: 3px solid;
+}
+
+.header-left{
+  float: left;
+  justify-content: space-between;
+  height: 10px;
+}
+
+.logout{
+  display:inline-block;
+  margin-right:20px;
+  color: white;
+  background-color: transparent;
+  margin-top: 30px;
+  padding: 10px 25px 10px;
+  float: right;
+}
+
+.logout:hover{
+  cursor: pointer;
+  background-color: gray;
+}
