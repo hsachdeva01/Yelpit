@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 // import {login} from './util/session_api_util' // Testing
 import * as Action from './actions/session_actions'
+import * as BusinessAction from './actions/business_actions'
 // import * as B_Actions from './actions/business_actions'
 
 
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Testing
   window.login = Action.login;
-  window.getState = store.getState;
+  window.getState = BusinessAction.fetchBusinesses;
   window.dispatch = store.dispatch;
   window.logout = Action.logout;
   // window.fetchBusinesses = B_Actions.fetchBusinesses;

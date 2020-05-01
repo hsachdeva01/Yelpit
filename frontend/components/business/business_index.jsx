@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Business from './business';
 
 
 
-class BusinessHeader extends React.Component{
+class BusinessIndex extends React.Component{
   constructor(props){
     super(props);
+  }
+
+  componentDidMount(){
+    window.scrollTo(0, 0);
+    this.props.fetchBusinesses();
   }
 
 
@@ -15,7 +21,7 @@ class BusinessHeader extends React.Component{
       <div className="logged-in-header">
         <div className="business-page-user">
           <div className="write-review">Write a Review</div>
-          <span className="business-header-user-logout" onClick={this.props.logout}>Log Out</span>
+          <span className="business-header-user-logout" onClick={this.props.logout}><Link to="/">Log Out</Link></span>
         </div>
       </div>
     ) : (
@@ -33,8 +39,8 @@ class BusinessHeader extends React.Component{
         <div className="search-box">
           <Link to="/" className="biz-app-name">Yelpit</Link>
           <div className="input-search">
-            <input type="text" placeholder="tacos cheap dinner businesses"/>
-            <input type="text" placeholder="address neighborhood"/>
+            <input className="search" type="text" placeholder="tacos cheap dinner businesses"/>
+            <input className="search-location" type="text" placeholder="address neighborhood"/>
             <label className="search-box-search-icon">
               <i className="fas fa-search"></i>
         {businessHeader}
@@ -42,10 +48,26 @@ class BusinessHeader extends React.Component{
           </div>
         </div>
         </div>
+        {/* <div>{this.props.businesses.name}</div> */}
+        {/* <Business businesses={this.props.businesses}/> */}
+        {/* <Business /> */}
+        <div className="business-list">
+          {
+            this.props.businesses.map((business, idx) => {
+              return (
+                <Business
+                business={business}
+                // key={key}
+                idx={idx}
+                />
+              )
+            })
+          }
+        </div>
       </div>
       )
     }
 };
 
 
-export default BusinessHeader;
+export default BusinessIndex;

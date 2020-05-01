@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Business.destroy_all
 
 user1 = User.create!([{first_name: "Gordon", last_name: "Ramsey", email: "masterchef@chef.com", password: "password", zip_code: 12345}])
 user2 = User.create!({first_name: "test", last_name: "test", email: "test@gmail.com", password: "password", zip_code: 12345})
@@ -19,3 +20,23 @@ address: "490 Pacific Ave", state: "CA", city: "San Francisco",
 zip_code: 94133, phone_number: "4157758508", website: "https://cotognasf.com/", 
 price_range: "$$$", business_hours: "11:30AM to 9PM", 
 latitude: 37.7974, longitude: 122.4036}])
+
+
+appAcademy = Business.create!([{name: "App Academy", 
+address: "825 Battery St", state: "CA", city: "San Francisco", 
+zip_code: 94111, phone_number: "4154171991", website: "https://www.appacademy.io/", 
+price_range: "$$$", business_hours: "Open 24 Hours", 
+latitude: 37.7990, longitude: 122.4014}])
+
+
+thePinkElephantAlibi = Business.create!([{name: "The Pink Elephant Alibi", 
+address: "142 Minna St", state: "CA", city: "San Francisco", 
+zip_code: 94105, phone_number: "4158729379", website: "pinkelephantusa.com", 
+price_range: "$$", business_hours: "11:00AM to 10:00PM", 
+latitude: 37.6016, longitude: 121.7195}])
+
+limoncello = Business.create!([{name: "Limoncello", 
+address: "1400 Sutter St", state: "CA", city: "San Francisco", 
+zip_code: 94109, phone_number: "4156386361", website: "web.ineons.com/limoncello", 
+price_range: "$$", business_hours: "10:00AM to 7:00PM", 
+latitude: 37.7875, longitude: 122.4237}])
