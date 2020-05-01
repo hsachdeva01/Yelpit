@@ -83,31 +83,32 @@ class LoginSessionForm extends React.Component {
           </p>
 
           <div className="login-form">
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-              required
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-              required
-            />
-            {this.renderErrors()}
-            {/* <button className="login-btn" onClick={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
+                required
+              />
+              <br />
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password"
+                required
+              />
+              {this.renderErrors()}
+              {/* <button className="login-btn" onClick={this.handleSubmit}>
               {this.props.formType}
             </button> */}
-            <form onSubmit={this.handleSubmit}>
-            <input
-              className="login-btn"
-              type="submit"
-              value={this.props.formType}
-            />
+              {/* <form onSubmit={this.handleSubmit}> */}
+              <input
+                className="login-btn"
+                type="submit"
+                value={this.props.formType}
+              />
             </form>
             <button className="demo-btn" onClick={this.demoLogin}>
               Demo Login
