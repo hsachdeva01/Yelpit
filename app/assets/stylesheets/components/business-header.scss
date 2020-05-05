@@ -1,100 +1,75 @@
-.application-biz-name{
+.business-header-main{
+  background-color: #d32323;
+  display: block;
+  position: relative;
+  height: 100px;
+  justify-content: space-between;
+  display: flex;
+}
+
+#application-name{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
   color: red;
   text-shadow: 7px 2px 4px white;
-  margin-top: 150px;
-  padding-left: 25px;
-  padding-top: 50px;
-  margin: 0;
+  margin-left: 25px;
 }
 
-.business-page-user{
-  position: relative;
-  float: right;
-  bottom: 130px;
-  display: inline-flex;
-  padding-top: 30px;
-  padding-top: 80px;
+.application-logo{
+  position: absolute;
+  margin-top: 20px;
 }
 
-.write-review{
-  font-size: 20px;
-  color: black;
-  cursor: pointer;
-  padding-top: 20px;
-  padding-right: 20px;
-}
-
-.write-review:hover{
-  border-bottom: 3px solid;
-}
-
-.business-header-user-logout{
-  font-size: 20px;
-  color: black;
-  cursor: pointer;
-  padding-top: 20px;
-  padding-right: 20px;
-}
-
-.business-header-signup{
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
-  // padding-top: 20px;
-  // padding-right: 20px;
-  border: 2px solid red;
-  background-color: red;
-  border-radius: 5px;
-  padding: 10px 15px 10px;
-  margin-right: 20px;
-}
-
-.business-header-signin{
-  font-size: 20px;
-  color: black;
-  cursor: pointer;
-  // padding-top: 20px;
-  // padding-right: 20px;
-  border: 2px solid black;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px 15px 10px;
-}
-
-.input-search{
-  float: left;
-  width: 80%;
-}
-
-.biz-app-name{
-  float:left;
-}
-
-.input-search{
-  padding-left: 40px;
-  position: relative;
-}
-
-.search{
-  width: 30%;
-   height: 30px;
-}
-
-.search-location{
-  width: 30%;
-  height: 30px;
-}
-
-.under-search-bar{
+.business-page-searchbar{
   display: flex;
-  justify-content: center;
-  align-content: center;
+  width: 600px;
+  height: 53px;
+  margin-top: 17px;
+  margin-left: 100px;
+  position: relative;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 8px 0wrgba(0,0,0,0.2), 0 6px 20px 0 white;
   text-align: center;
+  margin-left: auto;
+  vertical-align: middle;
+  padding: 6px;
 }
 
-#home-service:hover, #delivery:hover, #restaurant:hover, #accountant:hover{
-  text-decoration: underline;
+
+.user-not-logged-in{
+  float: right;
+}
+
+.business-page-location, .business-page-search {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block;
+  width: 250px;
+}
+
+.username{
+  display: inline-block;
+  margin-right: 20px;
+  color: white;
+  margin-top: 30px;
+  padding: 10px 25px 10px;
+}
+
+.logout-business{
+  display: inline-block;
+  margin-right: 20px;
+  color: white;
+  background-color: transparent;
+  margin-top: 30px;
+  padding: 10px 25px 10px;
+  float: right;
+}
+
+.logout-business:hover{
+  border-bottom: 3px solid;
   cursor: pointer;
 }

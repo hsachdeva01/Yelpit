@@ -1,0 +1,18 @@
+.footer-image{
+  width: 100%;
+  border-top: 1px solid lightgray;
+  height: 220px;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #ccc;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #f5f5f5;
+}
+
+.footer-container{
+  text-align: center;
+}

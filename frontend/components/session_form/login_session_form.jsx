@@ -29,10 +29,11 @@ class LoginSessionForm extends React.Component {
 
   demoLogin(e) {
     e.preventDefault();
-    this.setState({
+    this.props.processForm({
       email: "yelpit@yelpit.com",
       password: "password"
-    });
+    })
+    // this.props.processForm(this.state);
   }
 
   handleClearErrors(e) {
@@ -57,7 +58,7 @@ class LoginSessionForm extends React.Component {
   }
 
   render() {
-
+// 
     
     return (
       <div className="existing-user-form">
@@ -65,6 +66,13 @@ class LoginSessionForm extends React.Component {
           <a href="/" id="text" className="login-page-logo">
             Yelpit
           </a>
+        </div>
+        <div className="errors">
+          {this.renderErrors()}
+          <i
+            onClick={this.handleClearErrors}
+            className="fas fa-times"
+          />
         </div>
         {/* <div className="login-image">
           <img src={window.signup_illustration} alt="login-illustration"/>
@@ -79,7 +87,7 @@ class LoginSessionForm extends React.Component {
             </span>
           </p>
           <p className="term-policy-text">
-            By logging in, you agree to Yelpit's Terms and Conditions
+            By logging in, you do not agree to Yelpit's Terms and Conditions
           </p>
 
           <div className="login-form">
@@ -99,7 +107,6 @@ class LoginSessionForm extends React.Component {
                 placeholder="Password"
                 required
               />
-              {this.renderErrors()}
               {/* <button className="login-btn" onClick={this.handleSubmit}>
               {this.props.formType}
             </button> */}

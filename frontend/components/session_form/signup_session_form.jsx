@@ -68,6 +68,10 @@ class SignupSessionForm extends React.Component {
             Yelpit
           </a>
         </div>
+        <div className="errors">
+          {this.renderErrors()}
+          <i onClick={this.handleClearErrors} className="fas fa-times" />
+        </div>
         <div className="sign-up-box">
           <div className="sign-up-text-form">
             <p className="sign-up-for-yelpit">Sign Up for Yelpit</p>
@@ -75,8 +79,8 @@ class SignupSessionForm extends React.Component {
               Connect with your favorite business
             </p>
             <p className="sign-up-legal">
-              By continuing, you do not agree to any
-              Yelpit's Terms and Conditions
+              By continuing, you do not agree to any Yelpit's Terms and
+              Conditions
             </p>
           </div>
           {/* <button className="sign-up-demo-btn" onClick={this.demoLogin}>
@@ -85,64 +89,69 @@ class SignupSessionForm extends React.Component {
           {/* <div class="divider">OR</div> */}
           {/* <div class="divider-line"></div> */}
           <div className="sign-up-form">
-            <div className="sign-up-name">
-              <input
-                type="text"
-                value={this.state.first_name}
-                onChange={this.update("first_name")}
-                placeholder="First Name"
-                required
-              />
-              <input
-                type="text"
-                value={this.state.last_name}
-                onChange={this.update("last_name")}
-                placeholder="Last Name"
-                required
-              />
-            </div>
-            <div className="signup-email">
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                placeholder="Email"
-                required
-              />
-            </div>
-            <div className="signup-password">
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password"
-                required
-              />
-            </div>
-            <div className="signup-zipcode">
-              <input
-                type="text"
-                value={this.state.zip_code}
-                onChange={this.update("zip_code")}
-                placeholder="Zip Code"
-                required
-              />
-            </div>
-            <div className="signup-birthday">
-              <p id="birthday">Birthday Optional </p>
-              <input type="date" />
-            </div>
+            <form onSubmit={this.handleSubmit}>
+              <div className="sign-up-name">
+                <input
+                  type="text"
+                  value={this.state.first_name}
+                  onChange={this.update("first_name")}
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  type="text"
+                  value={this.state.last_name}
+                  onChange={this.update("last_name")}
+                  placeholder="Last Name"
+                  required
+                />
+              </div>
+              <div className="signup-email">
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div className="signup-password">
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div className="signup-zipcode">
+                <input
+                  type="text"
+                  value={this.state.zip_code}
+                  onChange={this.update("zip_code")}
+                  placeholder="Zip Code"
+                  required
+                />
+              </div>
+              <div className="signup-birthday">
+                <p id="birthday">Birthday Optional </p>
+                <input type="date" />
+              </div>
 
-            <div className="sign-up-btn">
-              <button onClick={this.handleSubmit}>{this.props.formType}</button>
-            </div>
+              <div className="sign-up-btn">
+                <input
+                  className="login-btn"
+                  type="submit"
+                  value={this.props.formType}
+                />
+              </div>
+            </form>
             <div className="already-on-yelpit">
               <p>
                 Already on Yelpit? <Link to="/login">Log in</Link>
               </p>
             </div>
           </div>
-          {this.renderErrors()}
         </div>
       </div>
     );

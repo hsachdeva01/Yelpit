@@ -1,0 +1,70 @@
+.business-div-box{
+  height: 100px;
+  font-size: 30px;
+  font-family: fantasy;
+  margin-top: 20px;
+}
+
+.business-index-item:hover{
+  box-shadow: 4px 5px 5px grey;
+}
+
+.business-index-item{
+  width: 650px;
+  height: 180px;
+  margin: 0 auto;
+  text-align: right;
+  outline: solid 1px lightgrey;
+  margin-bottom: 10px;
+}
+
+.business-photo img {
+  float: left;
+  display: flex;
+  height: 170px;
+  width: 220px;
+  margin-top: 5px;
+}
+
+.business-name{
+  float: left;
+  padding-left: 20px;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #2b273c;
+}
+
+.business-rating{
+  position: absolute;
+  margin-top: 40px;
+  padding-left: 20px;
+}
+
+.name-and-rating{
+  float: left;
+  display: grid;
+}
+
+.fas {
+  background-color: orange;
+  padding-right: 3px;
+  padding-left: 3px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  border-radius: 2px;
+  text-align: center;
+  color: white;
+}
+.fas:hover{
+  background-color: red;
+}
+
+.price-category{
+  float: left;
+  margin-top: 65px;
+  color: grey;
+  margin-left: -120px;
+  display: block;
+}
