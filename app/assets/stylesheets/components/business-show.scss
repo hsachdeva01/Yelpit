@@ -9,6 +9,19 @@
   object-fit: cover;
 }
 
+.business-picture img:hover{
+  position:relative;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  margin-left: -5px;
+  margin-right: -15px;
+  width:30%;
+  height:auto;
+  display:block;
+  z-index:999;
+
+}
+
 .business-picture{
   display: flex;
   justify-content: space-between;
@@ -149,9 +162,11 @@
   font-size: 10px;
   display: table-row;
   margin-top: 10px;
+  color: orangered;
+  font-size: 15px;
 }
 
-.business-website, .business-phone, .business-menu{
+.business-website, .business-phone, .business-menu, .business-direction{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -162,7 +177,7 @@
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-.business-phone .fas, .business-website .fas, .business-menu .fas{
+.business-phone .fas, .business-website .fas, .business-menu .fas, .business-direction .fas{
   margin-right: 20px;
   background-color: transparent;
   color: black;

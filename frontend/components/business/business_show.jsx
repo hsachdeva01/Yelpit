@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BusinessHeader from './business_header_container';
 import Footer from '../footer/footer';
+import BusinessMap from './business_map';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class BusinessShow extends React.Component {
                 <span>
                   {" "}
                   <i class="fas fa-star"></i>
-                  <p>Write a Review</p>
+                  <Link to="/reviews"><p>Write a Review</p></Link>
                 </span>
               </div>
               <div className="covid-info">
@@ -73,7 +74,10 @@ class BusinessShow extends React.Component {
                 <p className="location-hours">Location {`&`} Hours</p>
                 <div className="map-hours">
                   <div className="map">
-                    Map goes here
+                    <div className="location">
+                    <BusinessMap />
+                    </div>
+                   <div> {this.props.business.address} {this.props.business.state} {this.props.business.city} {this.props.business.zip_code} </div>
                   </div>
                 <div className="business-hours">
                   <div>
@@ -125,6 +129,10 @@ class BusinessShow extends React.Component {
                 <div className="business-menu">
                   <i className="fas fa-utensils" />
                   <p>Full Menu</p>
+                </div>
+                <div className="business-direction">
+                  <i className="fas fa-directions fa-lg"></i> 
+                  <p>Get Directions</p>
                 </div>
               </div>
             </div>

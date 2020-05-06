@@ -1,8 +1,11 @@
 .business-div-box{
   height: 100px;
   font-size: 30px;
-  font-family: fantasy;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 20px;
+  font-weight: 700;
+  padding-left: 30px;
+  line-height: 25px;
 }
 
 .business-index-item:hover{
@@ -78,6 +81,32 @@
 
 .individual-business > div{
   height: 200px
+}
+
+.business-page-search-icon i{
+  border-radius: 0 4px 4px 0;
+  background: d32323;
+  text-align: center;
+  padding: 18px;
+  color: white;
+  font-size: 20px;
+}
+
+.business-item-render{
+  width: 65%;
+  display: flex;
+  margin-left: 30px;
+}
+
+.test{
+  margin-left: 80px;
+}
+
+.test > .map{
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  width: 400px;
 }
 
 // .business-name{

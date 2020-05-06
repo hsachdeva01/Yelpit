@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import BusinesHeader from './business_header_container'
 import BusinessIndexItem from './business_index_item'
 import Footer from '../footer/footer';
+import BusinessMap from './business_map';
 
 class BusinessIndex extends React.Component{
   constructor(props){
@@ -33,6 +34,7 @@ class BusinessIndex extends React.Component{
           </div> */}
         </div>
         <div className="business-item-render">
+          {/* <BusinessMap /> */}
           <div className="individual-business">
             {this.props.business.map((business, idx) => (
               <div key={idx}>
@@ -43,6 +45,9 @@ class BusinessIndex extends React.Component{
               </div>
             ))}
           </div>
+          <div className="test"><BusinessMap /> </div>
+        </div>
+        <div>
         </div>
         <Footer />
       </div>
