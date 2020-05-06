@@ -44,27 +44,33 @@ class Header extends React.Component {
               </a>
             </p>
           </div>
+          <div className="main">
           <div className="application-name">
             <Link to="/">Yelpit</Link>
+
+            </div>
+            <form className="homepage-search">
+              <label className="search-find">
+                <span className="find">Find</span>
+                <input
+                  className="search-input"
+                  type="text"
+                  placeholder="takeout delivery favorites"
+                />
+              </label>
+              <label className="search-near">
+                <span className="near">Near</span>
+                <input
+                  className="near-input"
+                  type="text"
+                  placeholder="San Francisco, CA 94111"
+                />
+              </label>
+              {/* <label className="search-icon">
+                <i className="fas fa-search" />
+              </label> */}
+            </form>
           </div>
-          <form className="homepage-search">
-            <label className="search-find">
-              <span className="find">Find</span>
-              <input
-                className="search-input"
-                type="text"
-                placeholder="takeout delivery favorites"
-              />
-            </label>
-            <label className="search-near">
-              <span className="near">Near</span>
-              <input
-                className="near-input"
-                type="text"
-                placeholder="San Francisco, CA 94111"
-              />
-            </label>
-          </form>
 
           <div className="under-search-bar">
             <li id="accountant">Accountants</li>
@@ -72,13 +78,13 @@ class Header extends React.Component {
             <li id="home-service">Home Services</li>
             <li id="delivery">Delivery</li>
           </div>
+          </div>
+        <div className="display">
+          <HomePageDisplay />
         </div>
-      <div className="display">
-        <HomePageDisplay />
-      </div>
-      <div className="footer-homepage">
-        <Footer />
-      </div>
+        <div className="footer-homepage">
+          <Footer />
+        </div>
       </div>
     );
   };

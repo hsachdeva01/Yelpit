@@ -19,7 +19,7 @@ user3 = User.create!({first_name: "Yelpit", last_name: "Demo", email: "yelpit@ye
 cotogna = Business.create!({name: "Cotogna", 
 address: "490 Pacific Ave", state: "CA", city: "San Francisco", 
 zip_code: 94133, phone_number: "4157758508", website: "https://cotognasf.com/", 
-price_range: "$$$", business_hours: "11:30AM to 9PM", 
+price_range: "$$$", business_hours: "11:30 am - 9:00 pm", 
 latitude: 37.7974, longitude: -122.4036})
 
 
@@ -33,13 +33,13 @@ latitude: 37.7990, longitude: -122.4014})
 thePinkElephantAlibi = Business.create!({name: "The Pink Elephant Alibi", 
 address: "142 Minna St", state: "CA", city: "San Francisco", 
 zip_code: 94105, phone_number: "4158729379", website: "pinkelephantusa.com", 
-price_range: "$$", business_hours: "11:00AM to 10:00PM", 
+price_range: "$$", business_hours: "11:00 am - 10:00 pm", 
 latitude: 37.6016, longitude: -121.7195})
 
 limoncello = Business.create!({name: "Limoncello", 
 address: "1400 Sutter St", state: "CA", city: "San Francisco", 
 zip_code: 94109, phone_number: "4156386361", website: "web.ineons.com/limoncello", 
-price_range: "$$", business_hours: "10:00AM to 7:00PM", 
+price_range: "$$", business_hours: "10:00 am - 7:00 pm", 
 latitude: 37.7875, longitude: -122.4237})
 
 cotogna_photo1 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/cotogna.jpg")
@@ -48,12 +48,36 @@ cotogna.photos.attach(io: cotogna_photo1 , filename: "cotogna.jpg")
 cotogna_photo2 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/cotonga2.jpg")
 cotogna.photos.attach(io: cotogna_photo2 , filename: "cotogna2.jpg")
 
+cotogna_photo3 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/cotogna3.jpeg")
+cotogna.photos.attach(io: cotogna_photo3 , filename: "cotogna3.jpg")
+
+cotogna_photo4 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/cotogna4.jpg")
+cotogna.photos.attach(io: cotogna_photo4 , filename: "cotogna4.jpg")
+
 app_academy_photo1 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/app-academy-open.png")
 appAcademy.photos.attach(io: app_academy_photo1, filename: "app-academy-open.png")
 
 pink_elephant_photo1 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/theElephant.jpeg")
 thePinkElephantAlibi.photos.attach(io: pink_elephant_photo1 , filename: "theElephant.jpeg")
 
+pink_elephant_photo2 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/theelephant2.jpg")
+thePinkElephantAlibi.photos.attach(io: pink_elephant_photo2 , filename: "theElephant2.jpeg")
+
+pink_elephant_photo3 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/thelephant3.jpg")
+thePinkElephantAlibi.photos.attach(io: pink_elephant_photo3 , filename: "theElephant3.jpeg")
+
+pink_elephant_photo4 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/theelephant4.jpg")
+thePinkElephantAlibi.photos.attach(io: pink_elephant_photo4 , filename: "theElephant4.jpeg")
+
 limoncello_photo1 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/Limoncello.jpg")
 limoncello.photos.attach(io: limoncello_photo1, filename: "Limoncello.jpg")
+
+limoncello_photo2 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/limoncello2.jpeg")
+limoncello.photos.attach(io: limoncello_photo2, filename: "limoncello2.jpg")
+
+limoncello_photo3 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/limoncello3.jpg")
+limoncello.photos.attach(io: limoncello_photo3, filename: "limoncello3.jpg")
+
+limoncello_photo4 = open("https://yelpit-seeds.s3-us-west-1.amazonaws.com/limoncello4.jpg")
+limoncello.photos.attach(io: limoncello_photo4, filename: "limoncello4.jpg")
 

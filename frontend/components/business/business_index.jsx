@@ -9,7 +9,7 @@ class BusinessIndex extends React.Component{
     super(props);
   }
   componentDidMount() {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     this.props.fetchBusinesses();
   }
 
@@ -22,9 +22,9 @@ class BusinessIndex extends React.Component{
         </div>
         <div className="business-div-box">
           <p id="browsing-sf">Browsing San Francisco, CA Businesses</p>
-          {/* <div className="business-index-page-container-subheader-2">
+          {/* <div className="business-index-prie-range">
             <i className="fas fa-dollar-sign" /> Price Range{" "}
-            <ul className="business-index-page-container-subheader-2-dropdown">
+            <ul className="price-range-dropdown">
               <li onClick={() => this.update("$")}>$</li>
               <li onClick={() => this.update("$$")}>$$</li>
               <li onClick={() => this.update("$$$")}>$$$</li>
@@ -35,11 +35,10 @@ class BusinessIndex extends React.Component{
         <div className="business-item-render">
           <div className="individual-business">
             {this.props.business.map((business, idx) => (
-              <div>
+              <div key={idx}>
                 <BusinessIndexItem
                   business={business}
                   // key={business.id}
-                  key={idx}
                 />
               </div>
             ))}
