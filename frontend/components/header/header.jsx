@@ -47,29 +47,26 @@ class Header extends React.Component {
           <div className="main">
           <div className="application-name">
             <Link to="/">Yelpit</Link>
-
             </div>
-            <form className="homepage-search">
-              <label className="search-find">
+            <div className="homepage-search">
+              <div className="search-find">
                 <span className="find">Find</span>
                 <input
                   className="search-input"
                   type="text"
                   placeholder="takeout delivery favorites"
                 />
-              </label>
-              <label className="search-near">
+              </div>
+              <div className="search-near">
                 <span className="near">Near</span>
                 <input
                   className="near-input"
                   type="text"
                   placeholder="San Francisco, CA 94111"
                 />
-              </label>
-              {/* <label className="search-icon">
-                <i className="fas fa-search" />
-              </label> */}
-            </form>
+                <Link className="search-icon" to="/businesses"> <i className="fas fa-search" /> </Link>
+              </div>
+            </div>
           </div>
 
           <div className="under-search-bar">

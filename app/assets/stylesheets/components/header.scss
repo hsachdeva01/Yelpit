@@ -1,6 +1,5 @@
 .header-mainpage{
   background-image: url(https://cache.marriott.com/marriottassets/marriott/SFODT/sfodt-view-9722-hor-clsc.jpg);
-  // position: fixed; 
   top: 0; 
   left: 0; 
   min-width: 100%;
@@ -114,76 +113,40 @@
   background-color: gray;
 }
 
-.search-find, .search-near, .search-search {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 20px;
+.find, .near{
+  font-size: 27px;
+  background-color: white;
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+  color: lightslategrey;
   font-weight: bold;
-  height: 30px;
-  color: gray;
 }
 
-.search-find {
-  background-color: white;
-  border-radius: 4px 0 0 4px;
-  width: 60%;
-  padding-left: 10px;
-  padding-right: 10px;
+.search-input, .near-input{
+  padding: 13px 150px;
+  border: 2px solid transparent;
 }
 
-.search-near {
-  background-color: white;
-  width: 46%;
+.search-near .fas{
+  border-radius: 0 4px 4px 0;
+  background: #d32323;
+  text-align: center;
+  padding: 13px;
+  color: white;
 }
-
 
 .homepage-search{
   // padding-top: 40px;
   text-align: center;
   margin: 0;
   padding: 0;
-  border: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
 }
-
-
-.near-input {    
-    border: none;
-    border-color: transparent;
-    width: 230px;
-    color: black;
-    font-size: 18px;
-    outline: none;
-}
-.search-input{
-     border: none;
-    border-color: transparent;
-    width: 230px;
-    color: black;
-    font-size: 18px;
-    outline: none;
-}
-.near-input{
-  background-color: white;
-    padding: 12px 120px 12px 15px;
-}
-.near{
-    // padding-right: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: #666666;
-    font-weight: bolder;
-    border-left: 1px solid #b0b0b0;
-    padding-left: 10px
-}
-
-.find{
-    padding-right: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: #666666;
-    font-weight: bolder;
-    padding-left: 10px
-}
-
 
 .under-search-bar{
   // display: flex;
@@ -214,15 +177,6 @@
   padding-bottom: 30px
 }
 
-
-
-.search-find, .search-near{
-  background-color: white;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    padding: 12px 120px 12px 15px;
-}
-
 .display-pictures{
 justify-content: space-between;
   display: flex;
@@ -244,12 +198,9 @@ justify-content: space-between;
   display: block;
 }
 
-// .search-icon{
-//   border-radius: 0 4px 4px 0;
-//   background: #d32323;
-//   text-align: center;
-//   font-size: 33px;
-//   width: 100%;
-//   vertical-align: middle;
-//   padding: 2px 4px 0px 4px;
-// }
+.search-icon a{
+  display: inline-flex;
+  background: red;
+  padding: 10px 10px;
+  color: blanchedalmond;
+}
