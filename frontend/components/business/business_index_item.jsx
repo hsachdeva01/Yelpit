@@ -35,6 +35,9 @@ const BusinessIndexItem = props => (
             {props.business.zip_code}
           {" "}
       </div>
+      <div className="takeout-delivery">
+        Offers Takeout and Delivery
+      </div>
      </div>
 
 );

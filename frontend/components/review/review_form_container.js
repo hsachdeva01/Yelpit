@@ -9,7 +9,7 @@ import React from 'react';
 const mapStateToProps = (state, ownProps) => ({
   formType: "Post a Review",
   user: state.entities.users[state.session.id],
-  business: state.entities.businesses[ownProps.match.params.id],
+  business: state.entities.businesses[ownProps.match.params.businessId] || {},
   errors: state.errors.session
 })
 

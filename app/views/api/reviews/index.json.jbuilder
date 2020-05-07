@@ -1,5 +1,5 @@
-json.array! @reviews.each do |review|
-    json.partial! '/api/reviews/review', review: review
-    json.extract! review.business, :name
-    json.extract! review.user, :first_name, :last_name
+@reviews.each do |review|
+  json.set! review.id do
+    json.partial! 'review', review: review
+  end
 end

@@ -8,7 +8,7 @@ const footer = () => (
         <i className="fab fa-github" />
       </a>
       <a
-        className="linkedin-btn"
+        className="linkedin-btn-footer"
         href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/"
       >
         <i className="fab fa-linkedin" />

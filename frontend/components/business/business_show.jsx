@@ -49,7 +49,7 @@ class BusinessShow extends React.Component {
               <div className="reviews">
                 <span>
                   {" "}
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                   <Link to="/reviews"><p>Write a Review</p></Link>
                 </span>
               </div>
@@ -115,13 +115,13 @@ class BusinessShow extends React.Component {
             <div className="right-div">
               <div className="business-floater">
                 <div className="business-website">
-                  <i class="fas fa-chevron-right" />
+                  <i className="fas fa-chevron-right" />
                   <Link to={`${this.props.business.website}`}>
                     {this.props.business.website}
                   </Link>
                 </div>
                 <div className="business-phone">
-                  <i class="fas fa-phone-volume" />(
+                  <i className="fas fa-phone-volume" />(
                   {this.props.business.phone_number.slice(0, 3)}){" "}
                   {this.props.business.phone_number.slice(3, 6)} -{" "}
                   {this.props.business.phone_number.slice(6)}

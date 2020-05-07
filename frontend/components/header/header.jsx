@@ -7,15 +7,28 @@ class Header extends React.Component {
   constructor(props){
     super(props);
     // console.log(this.props)
+    this.state = { search: "", location: ""}
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.SearchBusinesses(this.state.query)
+      .then( () => this.props.history.push("/businesses"))
+  }
+
+  update(field){
+    return (e) => {
+      this.setState({ [field]: e.target.value})
+    }
+  }
 
 
   render(){
     const header = (this.props.currentUser) ? (
       <div className="header-right-logout">
-        <p>Hello, {this.props.currentUser.first_name}</p>
         <button className="logout" onClick={this.props.logout}>Log Out</button>
+        <div className="user"><p>Hello, {"  "} {this.props.currentUser.first_name}</p></div>
       </div>
     ) : (
       <div className="header-right">
@@ -54,6 +67,8 @@ class Header extends React.Component {
                   className="search-input"
                   type="text"
                   placeholder="takeout delivery favorites"
+                  onChange={this.update('search')}
+                  value={this.state.search}
                 />
               </label>
               <label className="search-near"> Near
@@ -61,6 +76,8 @@ class Header extends React.Component {
                   className="near-input"
                   type="text"
                   placeholder="San Francisco, CA 94111"
+                  onChange={this.update('location')}
+                  value={this.state.location}
                 />
               </label>
               <label className="search-icon" >

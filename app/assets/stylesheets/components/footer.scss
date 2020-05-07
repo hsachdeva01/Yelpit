@@ -16,3 +16,16 @@
 .footer-container{
   text-align: center;
 }
+
+.github-btn-footer > .fab, .linkedin-btn-footer > .fab{
+  font-size: 30px;
+  color: #d32323;
+  padding-right: 30px;
+}
+
+.github-btn-footer > .fab:hover, .linkedin-btn-footer > .fab:hover{
+  font-size: 35px;
+  color: red;
+  transition: 0.5s all;
+  font-weight: 700;
+}

@@ -3,7 +3,7 @@ import HeaderContainer from './header/header_container';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
-// import BusinessHeader from './business/business_header_container'
+import BusinessHeader from './business/business_header_container'
 import { AuthRoute } from '../util/route_util';
 import BusinessIndexContainer from "./business/business_index_container";
 import BusinessShowContainer from "./business/business_show_container";

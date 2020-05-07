@@ -6,14 +6,15 @@ class Api::ReviewsController < ApplicationController
   end
   
   def show
-    @review = Review.find(params: [:id])
+    @review = Review.find(params[:id])
+    render :show
   end
 
   def create 
-    @review = current_user.reviews.new(review_params)
+    @review = Review.new(review_params)
 
     if @review.save
-      render :show
+      render "api/reviews/show"
     else
       render json: @review.errors.full_messages, status: :unprocessable_entity
     end

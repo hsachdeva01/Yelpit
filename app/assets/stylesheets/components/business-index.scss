@@ -20,7 +20,9 @@
   outline: solid 1px lightgrey;
   margin-bottom: 10px;
 }
-
+.business-profile-title{
+  width: 400px;
+}
 .business-photo img {
   float: left;
   display: flex;
@@ -70,7 +72,7 @@
   width: 250px;
   height: 20px;
   display: flex;
-  margin-top: 35px;
+  margin-top: 20px;
   padding-left: 13px;
 }
 
@@ -107,6 +109,27 @@
   overflow: hidden;
   height: 500px;
   width: 400px;
+}
+
+.takeout-delivery{
+  border: 2px solid blue;
+  height: 30px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
+  background-color: #f4f4f4;
+  border-color: #eeeeef;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: flex-end;
+  text-align: center;
+  align-items: center;
+}
+
+.location > div{
+  font-weight: 700;
+  border-left: 1px solid darkslategrey;
+  border-right: 1px solid darkslategrey;
+  padding: 2px 4px 6px 20px;
+  border-bottom: 1px solid darkslategrey;
 }
 
 // .business-name{

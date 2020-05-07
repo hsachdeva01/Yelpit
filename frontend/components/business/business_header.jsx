@@ -58,7 +58,7 @@ class BusinessHeader extends React.Component {
           />
           <label className="business-page-search-icon">
             <label>
-              <i className="fas fa-search"></i>
+              <Link to="/businesses"><i className="fas fa-search"></i></Link>
             </label>
           </label>
         </div>
