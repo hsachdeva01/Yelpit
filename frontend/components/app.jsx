@@ -7,7 +7,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import { AuthRoute } from '../util/route_util';
 import BusinessIndexContainer from "./business/business_index_container";
 import BusinessShowContainer from "./business/business_show_container";
-// import ReviewForm from './review/review_form_container';
+import ReviewForm from './review/review_form_container';
 
 
 
@@ -23,7 +23,7 @@ const App = () => (
       <Route exact path="/businesses" component={BusinessIndexContainer} />
       {/* <Route path="/:id" component={HeaderContainer} /> */}
       <Route path ="/businesses/:businessId" component={BusinessShowContainer} />
-      {/* <Route path="/reviews" component={ReviewForm} /> */}
+      <Route path="/reviews" component={ReviewForm} />
       <Route render={() => <Redirect to={{pathname: "/"}} />} />
     </Switch>
 

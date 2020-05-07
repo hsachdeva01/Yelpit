@@ -6,13 +6,12 @@ import { fetchBusiness } from '../../actions/business_actions'
 import React from 'react';
 
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    errors: state.errors.session,
-    user: state.entities.users[state.session.id],
-    business: state.entities.businesses[ownProps.match.params.id]
-  }
-}
+const mapStateToProps = (state, ownProps) => ({
+  formType: "Post a Review",
+  user: state.entities.users[state.session.id],
+  business: state.entities.businesses[ownProps.match.params.id],
+  errors: state.errors.session
+})
 
 const mapDispatchToProps = dispatch => {
   return {
