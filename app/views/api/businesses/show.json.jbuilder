@@ -10,7 +10,7 @@ json.photoUrls @business.photos.map { |file| url_for(file) }
 
   json.users do
     json.set! review.author.id do
-      json.extract! review.author, :id, :email
+      json.extract! review.user, :id, :email
     end
   end
 end

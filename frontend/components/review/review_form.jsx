@@ -8,14 +8,14 @@ class ReviewForm extends React.Component{
     this.state = {
       body: '',
       rating: 0,
-      business_id: null,
-      author_id: null
+      business_id: 0,
+      author_id: 0
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
-    this.props.fetchBusiness(this.props.match.params.businessId);
+    this.props.fetchBusiness(this.props.match.params.id);
   };
 
   update(field) {
@@ -31,7 +31,7 @@ class ReviewForm extends React.Component{
       body: this.state.body,
       rating: this.state.rating,
       author_id: this.props.author_id,
-      business_id: this.props.business_id
+      business_id: parseInt(this.props.match.params.id)
     }
     this.props.processReview(review)
       .then(this.props.history.push(`/businesses/${this.props.match.params.id}`))
@@ -39,23 +39,22 @@ class ReviewForm extends React.Component{
 
   renderErrors() {
     return (
-      <div className="login-error">
+      <div className="review-error">
         <ul>
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>{error}</li>
           ))}
         </ul>
+
       </div>
     );
   }
   
 
   render(){
-    if (!this.props.business) {
-      return null;
-    }
     return(
       <div className="review-page">
+        {/* {console.log(this.props.business.id)} */}
         <header className="review-page-header">
           <Link to="/">
             Yelpit
@@ -63,7 +62,7 @@ class ReviewForm extends React.Component{
         </header>
 
         <div className="review-form">
-          {this.renderErrors()}
+          {/* {this.renderErrors()} */}
           {console.log(this.props.business)}
           <form className="review-form-box" onSubmit={this.handleSubmit}>
             <Link to={`/businesses/${this.props.business.id}`}>

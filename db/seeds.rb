@@ -52,7 +52,7 @@ zip_code: 94103, phone_number: "4154426003", website: "sfviewlounge.com",
 price_range: "$$$", business_hours: "04:00 am - 12:00 pm", 
 latitude: 37.7850, longitude: -122.4040})
 
-Amber = Business.create!({name: "Amber", 
+amber = Business.create!({name: "Amber", 
 address: "25 Yerba Buena Ln", state: "CA", city: "San Francisco", 
 zip_code: 94103, phone_number: "4157770500", website: "amber-india.com", 
 price_range: "$$$", business_hours: "11:30 am - 10:00 pm", 
