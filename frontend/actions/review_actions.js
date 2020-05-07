@@ -1,41 +1,53 @@
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
+export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 import * as R_APIUtil from '../util/review_api_util';
 
-const receiveReview = ({review, user}) => ({
+export const receiveReview = ({review, average_rating, user}) => ({
   type: RECEIVE_REVIEW,
-  review: review,
-  user: user
+  review,
+  user,
+  average_rating
 });
 
-const removeReview = reviewId => ({
+export const removeReview = reviewId => ({
   type: REMOVE_REVIEW,
   reviewId
 });
 
-const receiveAllReview = reviews => ({
+export const receiveReviews = reviews => ({
   type: RECEIVE_ALL_REVIEWS,
   reviews
 });
 
+export const receiveErrors = errors => ({
+  type: RECEIVE_ERRORS,
+  errors
+})
+
+export const clearReviewErrors = () => ({
+  type: RECEIVE_ERRORS,
+  errors: []
+})
+
 
 export const fetchReviews = () => dispatch => (
   R_APIUtil.fetchReviews()
-  .then(payload => (
-    dispatch(receiveReview(payload))
+    .then(reviews => (
+      dispatch(receiveReviews(reviews))
   ))
 );
 
-export const fetchReview = review => dispatch => (
-  R_APIUtil.fetchReview(review)
-  .then(payload => (dispatch(receiveReview(payload))
+export const fetchReview = id => dispatch => (
+  R_APIUtil.fetchReviews(id)
+  .then(review => (dispatch(receiveReviews(review))
   ))
 );
 
-export const createReview = review => dispatch => (
-  R_APIUtil.createReview(review)
-  .then(payload => dispatch(receiveReview(payload)
+export const createReview = id => dispatch => (
+  R_APIUtil.createReview(id)
+  .then(review => dispatch(receiveReview(review)
   ))
 );
 
@@ -46,7 +58,6 @@ export const updateReview = review => dispatch => (
 );
 
 export const deleteReview = reviewId => dispatch => (
-  R_APIUtil.removeReview(reviewId)
-    .then(payload => dispatch(removeReview(payload.review.id)))
-)
-
+  R_APIUtil.deleteReview(reviewId)
+    .then(review => dispatch(removeReview(reviewId))
+))

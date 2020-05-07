@@ -1,5 +1,5 @@
 .header-mainpage{
-  background-image: url(https://cache.marriott.com/marriottassets/marriott/SFODT/sfodt-view-9722-hor-clsc.jpg);
+  background-image: url(https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/e456d8b923f5/assets/img/home/hero_photos/DLIUyjgS7v50YRV2xfNquA.jpg);
   top: 0; 
   left: 0; 
   min-width: 100%;
@@ -22,13 +22,16 @@
 }
 
 .application-name {
+  display: block;
+  width: 100%;
+  height: 100%;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 75px;
+  line-height: 75px;
   color: red;
+  font-weight: 700;
   text-shadow: 7px 2px 4px white;
-  margin-top: 150px;
-  padding-bottom: 30px
 }
 
 .signup {
@@ -113,49 +116,59 @@
   background-color: gray;
 }
 
-.find, .near{
-  font-size: 27px;
-  background-color: white;
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  color: lightslategrey;
-  font-weight: bold;
-}
-
-.search-input, .near-input{
-  padding: 13px 150px;
-  border: 2px solid transparent;
-}
-
-.search-near .fas{
-  border-radius: 0 4px 4px 0;
-  background: #d32323;
-  text-align: center;
-  padding: 13px;
-  color: white;
-}
 
 .homepage-search{
-  // padding-top: 40px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
+  justify-content: space-evenly;
+  float: left;
+  margin-top: 65px;
+  margin-bottom: 18px;
+}
+
+.homepage-search input{
+  margin-left: 10px;
+  line-height: 45px;
+  border: 1px solid transparent;
+  outline: none;
+  font-size: 18px;
 }
 
 .under-search-bar{
-  // display: flex;
   justify-content: center;
   width: 100%;
   position: fixed;
   color: white;
   display: flex;
   position: absolute;
+    margin-top: 90px;
+}
+
+.search-find, .search-near, .search-icon{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 45px;
+  color: #666666;
+}
+
+.search-find{
+  background-color: white;
+  border-radius: 4px 0 0 4px;
+  width: 45.99%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.search-near {
+  background-color: white;
+  width: 45.99%;
+}
+
+.search-icon {
+    width: 7.99%;
+    border-radius: 0 4px 4px 0;
+    background: #d32323;
+    text-align: center;
 }
 
 
@@ -178,7 +191,7 @@
 }
 
 .display-pictures{
-justify-content: space-between;
+  justify-content: space-between;
   display: flex;
   text-align: center;
   margin: 0 auto;
@@ -203,4 +216,14 @@ justify-content: space-between;
   background: red;
   padding: 10px 10px;
   color: blanchedalmond;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding-top: 80px;
+  align-content: center;
+  margin: auto;
+
 }

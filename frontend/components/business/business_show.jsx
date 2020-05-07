@@ -138,6 +138,8 @@ class BusinessShow extends React.Component {
             </div>
           </div>
         </div>
+        <div>
+        </div>
 
         <div className="footer">
           <Footer />
