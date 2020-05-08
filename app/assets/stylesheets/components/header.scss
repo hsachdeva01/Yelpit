@@ -21,6 +21,18 @@
   height: 10px;
 }
 
+.search-icon > button{
+  background: #d32323;
+  border: none;
+}
+
+.search-icon > button > .fas{
+      color: white;
+    background: transparent;
+    font-size: 15px;
+
+}
+
 .application-name {
   display: block;
   width: 100%;
