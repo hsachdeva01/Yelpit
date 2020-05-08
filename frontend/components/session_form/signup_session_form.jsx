@@ -70,7 +70,10 @@ class SignupSessionForm extends React.Component {
         </div>
         <div className="errors">
           {this.renderErrors()}
-          <i onClick={this.handleClearErrors} className="fas fa-times" />
+          <i
+            onClick={this.handleClearErrors}
+            className={(this.props.errors.length === 0) ? "" : "fas fa-times"}
+          />
         </div>
         <div className="sign-up-box">
           <div className="sign-up-text-form">
