@@ -23,14 +23,9 @@ class BusinessIndex extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    // Obtain the search params, then use them to update the state.
     let business = props.business;
-
-    // console.log(this.props.location)
-    // console.log(typeof(this.props.location.search));
     console.log(business)
     if (this.props.location.search != "") {
-      // filter
       // http://localhost:3000/#/businesses/search/details?keyword=pink&location=davis
 
       const params = new URLSearchParams(this.props.location.search);
@@ -55,19 +50,12 @@ class BusinessIndex extends React.Component {
       this.setState({ business: data });
 
     } else {
-      // Just set the props to state.
       this.setState({ business: business });
     }
-
-
-    // console.log(business);
-    // console.log(data);
-
   }
 
 
   render() {
-    //console.log(this.props);
     console.log(this.state.business);
 
     return (

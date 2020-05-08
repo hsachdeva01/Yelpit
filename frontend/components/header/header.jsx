@@ -6,7 +6,6 @@ import Footer from '../footer/footer';
 class Header extends React.Component {
   constructor(props){
     super(props);
-    // console.log(this.props)
     this.state = { search: "", location: ""}
     this.handleSubmit = this.handleSubmit.bind(this);
   }
