@@ -84,7 +84,7 @@ class LoginSessionForm extends React.Component {
         </div>
         <div className="errors">
           {this.renderErrors()}
-          <i
+          <i 
             onClick={this.handleClearErrors}
             className={(this.props.errors.length === 0) ? "" : "fas fa-times"}
           />

@@ -13,7 +13,6 @@ class BusinessHeader extends React.Component {
           <p id="application-name">
             <Link to="/">Yelpit</Link>
           </p>
-        </div>
         <div className="business-page-searchbar">
           <input
             className="business-page-search"
@@ -26,7 +25,7 @@ class BusinessHeader extends React.Component {
             type="text"
           />
           <label className="business-page-search-icon">
-            <i className="fas fa-search"></i>
+              <Link to="/businesses"><i className="fas fa-search"></i></Link>  
           </label>
         </div>
         <div className="user-logged-in">
@@ -34,6 +33,7 @@ class BusinessHeader extends React.Component {
           <span className="logout-business" onClick={this.props.logout}>
             Log Out
           </span>
+        </div>
         </div>
       </div>
     );
