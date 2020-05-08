@@ -26,11 +26,11 @@ class BusinessHeader extends React.Component {
             type="text"
           />
           <label className="business-page-search-icon">
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
           </label>
         </div>
         <div className="user-logged-in">
-          <span className="username">{this.props.currentUser.first_name}</span>
+          <span className="username">{`Hello,  ${this.props.currentUser.first_name}`}</span>
           <span className="logout-business" onClick={this.props.logout}>
             Log Out
           </span>

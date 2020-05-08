@@ -258,7 +258,13 @@
   text-align: center;
 }
 
-.fas{
-    float: right;
-    top: -3px;
+// .errors > .fas{
+//   float: right;
+//   margin-top: -28px;
+//   color: grey;
+// }
+
+.errors > .fas:hover {
+  cursor: pointer;
+  color: red;
 }

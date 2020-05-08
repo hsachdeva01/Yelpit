@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import BusinessHeader from './business_header_container';
 import Footer from '../footer/footer';
 import BusinessMap from './business_map';
+import ReviewList from '../review/review_list'
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -19,6 +20,25 @@ class BusinessShow extends React.Component {
     if(!this.props.business.photoUrls){
       return null;
     }
+
+    const currentUser = (this.props.user) ? (
+      <div className="reviews">
+        <span>
+          {" "}
+          <i className="fas fa-star"></i>
+          <Link to={`/reviews/${this.props.business.id}`}><p>Write a Review</p></Link>
+        </span>
+      </div> 
+    )  : (
+        <div className="reviews">
+          <span>
+            {" "}
+            <i className="fas fa-star"></i>
+            <Link to='/login'><p>Write a Review</p></Link>
+          </span>
+        </div>
+    )
+
 
     return (
       <div className="business-show-all">
@@ -47,11 +67,7 @@ class BusinessShow extends React.Component {
                 </div>
               </div>
               <div className="reviews">
-                <span>
-                  {" "}
-                  <i className="fas fa-star"></i>
-                  <Link to="/reviews"><p>Write a Review</p></Link>
-                </span>
+                {currentUser}
               </div>
               <div className="covid-info">
                 <span>
@@ -75,7 +91,7 @@ class BusinessShow extends React.Component {
                 <div className="map-hours">
                   <div className="map">
                     <div className="location">
-                    <BusinessMap />
+                      <BusinessMap cords={{ lat: this.props.business.latitude, long: this.props.business.longitude }} />
                     </div>
                    <div> {this.props.business.address} {this.props.business.state} {this.props.business.city} {this.props.business.zip_code} </div>
                   </div>
@@ -132,13 +148,44 @@ class BusinessShow extends React.Component {
                 </div>
                 <div className="business-direction">
                   <i className="fas fa-directions fa-lg"></i> 
-                  <p>Get Directions</p>
+                  <a className="direction-map" href={`https://www.google.com/maps/@${this.props.business.latitude},${this.props.business.longitude},20z`}>
+                    Get Directions
+                    </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div>
+        <div className="business-recommended">
+          <p className="rev-p">Recommended Reviews</p>
+        </div>
+        <div className="yelpit-message">
+          <p className="trust">Your trust is our top concern,</p> so businesses can't pay to alter or remove their reviews.
+        </div>
+        <div className="business-show">
+            <div className="user-picture"><img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png" alt=""/></div>
+          <div className="review-start-stars">
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+          <div className="pic-name">
+            Start your review of <span className="business-name-review"> <Link to={`/reviews/${this.props.business.id}`}>
+              {this.props.business.name}</Link></span>
+          </div>
+          </div>
+        </div>
+        <div className="reviews-list">
+          <div className="review-show-here">
+            {console.log(this.props.reviews)}
+            {this.props.reviews.map(review => {
+              return <ReviewList
+              key={review.id}
+              review={review}
+              author={this.props.users[review.author_id]}
+            />})}
+          </div>
         </div>
 
         <div className="footer">

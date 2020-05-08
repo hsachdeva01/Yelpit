@@ -23,7 +23,7 @@ const App = () => (
       <Route exact path="/businesses" component={BusinessIndexContainer} />
       {/* <Route path="/:id" component={HeaderContainer} /> */}
       <Route path ="/businesses/:businessId" component={BusinessShowContainer} />
-      <Route path="/reviews" component={ReviewForm} />
+      <Route exact path="/reviews/:businessId" component={ReviewForm} />
       <Route render={() => <Redirect to={{pathname: "/"}} />} />
     </Switch>
 

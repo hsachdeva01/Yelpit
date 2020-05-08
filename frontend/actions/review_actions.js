@@ -4,11 +4,9 @@ export const REMOVE_REVIEW = "REMOVE_REVIEW";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 import * as R_APIUtil from '../util/review_api_util';
 
-export const receiveReview = ({review, average_rating, user}) => ({
+export const receiveReview = (review) => ({
   type: RECEIVE_REVIEW,
-  review,
-  user,
-  average_rating
+  review
 });
 
 export const removeReview = reviewId => ({
@@ -45,17 +43,17 @@ export const fetchReview = id => dispatch => (
   ))
 );
 
-export const createReview = id => dispatch => (
-  R_APIUtil.createReview(id)
+export const createReview = (review) => dispatch => (
+  R_APIUtil.createReview(review)
   .then(review => dispatch(receiveReview(review)
   ))
 );
 
-// export const updateReview = review => dispatch => (
-//   R_APIUtil.updateReview(review)
-//   .then(payload => dispatch(receiveReview(payload)
-//   ))
-// );
+export const updateReview = review => dispatch => (
+  R_APIUtil.updateReview(review)
+  .then(payload => dispatch(receiveReview(payload)
+  ))
+);
 
 export const deleteReview = reviewId => dispatch => (
   R_APIUtil.deleteReview(reviewId)

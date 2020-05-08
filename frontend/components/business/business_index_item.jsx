@@ -5,7 +5,7 @@ import BusinessIndex from './business_index';
 const BusinessIndexItem = props => (
   <div className="business-index-item">
     <Link className="business-photo" to={`/business/${props.business.id}`}>
-      <img src={props.business.photoUrls[0]} />
+      <img src={props.business.photoUrls[0]}/>
     </Link>
     <div className="name">
       <Link className="business-name" to={`/businesses/${props.business.id}`}>

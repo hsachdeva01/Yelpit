@@ -3,9 +3,10 @@ import { RECEIVE_BUSINESS } from '../actions/business_actions';
 
 const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
-  switch (action.typu) {
+  switch (action.type) {
     case RECEIVE_REVIEW:
-      const review = {[action.review.id]: action.review};
+      console.log(this.props)
+      const review = {[action.review.review.id]: action.review.review};
       return Object.assign({}, state, review)
     case RECEIVE_ALL_REVIEWS:
        return action.reviews
@@ -14,7 +15,7 @@ const reviewsReducer = (state = {}, action) => {
       delete newState[action.reviewId]
       return state
     case RECEIVE_BUSINESS:
-      return action.business.reviews || {};
+      return Object.assign({}, state, action.business.reviews);
     default:
       return state;
   }

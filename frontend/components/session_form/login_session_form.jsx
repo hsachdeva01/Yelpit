@@ -75,8 +75,6 @@ class LoginSessionForm extends React.Component {
   }
 
   render() {
-// 
-    
     return (
       <div className="existing-user-form">
         <div className="header">
@@ -88,7 +86,7 @@ class LoginSessionForm extends React.Component {
           {this.renderErrors()}
           <i
             onClick={this.handleClearErrors}
-            className="fas fa-times"
+            className={(this.props.errors.length === 0) ? "" : "fas fa-times"}
           />
         </div>
         {/* <div className="login-image">

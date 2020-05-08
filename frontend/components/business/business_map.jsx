@@ -8,45 +8,47 @@ const getCoordsObj = latLng => ({
   lng: latLng.lng()
 });
 
-const mapOptions = {
-  center: {
-    lat: 37.773972,
-    lng: -122.431297
-  }, 
-  zoom: 13
-};
-
 class BusinessMap extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
-  
+
   componentDidMount() {
     const map = this.refs.map;
+    //console.log(this.props.cords.long)
+    const mapOptions = {
+      center: {
+        lat: this.props.cords ? this.props.cords.lat : 37.773972,
+        lng: this.props.cords ? this.props.cords.long : -122.431297,
+      },
+      zoom: 13
+    };
+
     this.map = new google.maps.Map(map, mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerManager.bind(this), this.props.singleBusiness)
-    {console.log(this.props.business)}
-    if(this.props.singleBusiness){
+    { console.log(this.props.business) }
+    if (this.props.singleBusiness) {
       this.MarkerManager.fetchBusiness(this.props.businessId)
+    }
+    console.log(this.props);
+    // else {
+    //   this.MarkerManager.updateMarkers(this.props.businesses)
+    // }
+  }
+
+  componentDidUpdate() {
+
+    if (this.props.singleBusiness) {
+      const targetBusiness = this.props.business;
+      const targetBusinessKey = Object.keys(this.props.business);
+      this.MarkerManager.updateMarkers([targetBusiness])
     }
     // else {
     //   this.MarkerManager.updateMarkers(this.props.businesses)
     // }
   }
 
-  componentDidUpdate(){
-
-    if(this.props.singleBusiness){
-      const targetBusiness = this.props.business;
-      const targetBusinessKey = Object.keys(this.props.business);
-      this.MarkerManager.updateMarkers([targetBusiness])
-    } 
-    // else {
-    //   this.MarkerManager.updateMarkers(this.props.businesses)
-    // }
-  }
-
-  handleMarkerManager(business){
+  handleMarkerManager(business) {
     const url = `https://www.google.com/maps/place/${business.address}${business.city}${business.state}`;
     window.open(url);
   }
