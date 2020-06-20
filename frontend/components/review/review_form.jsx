@@ -13,11 +13,7 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
-    // get actuall business id
-    // Fetch business details.
-    //console.log(this.props.match.params.id);
     this.props.fetchBusiness(this.props.match.params.businessId);
-    console.log(this.props);
   };
 
   update(field) {
@@ -61,18 +57,13 @@ class ReviewForm extends React.Component {
 
     return (
       <div className="review-page">
-        {/* {console.log(this.props.business.id)} */}
         <header className="review-page-header">
-          {/* <div className="back-2-businesses">
-            <Link to="/businesses">Back to Businesses</Link>
-          </div> */}
           <Link to="/">
             Yelpit
           </Link>
         </header>
 
         <div className="review-form">
-          {/* {this.renderErrors()} */}
           {/* <p>Review by {this.props.user.first_name}</p> */}
           <form className="review-form-box" onSubmit={this.handleSubmit}>
             <Link to={`/businesses/${this.props.business.id}`}>
