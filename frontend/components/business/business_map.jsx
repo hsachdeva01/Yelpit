@@ -14,8 +14,7 @@ class BusinessMap extends React.Component {
   }
 
   componentDidMount() {
-    const map = this.refs.map;
-    //console.log(this.props.cords.long)
+    const map = this.refs.map
     const mapOptions = {
       center: {
         lat: this.props.cords ? this.props.cords.lat : 37.773972,
@@ -26,14 +25,9 @@ class BusinessMap extends React.Component {
 
     this.map = new google.maps.Map(map, mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerManager.bind(this), this.props.singleBusiness)
-    { console.log(this.props.business) }
     if (this.props.singleBusiness) {
       this.MarkerManager.fetchBusiness(this.props.businessId)
     }
-    console.log(this.props);
-    // else {
-    //   this.MarkerManager.updateMarkers(this.props.businesses)
-    // }
   }
 
   componentDidUpdate() {
@@ -43,9 +37,6 @@ class BusinessMap extends React.Component {
       const targetBusinessKey = Object.keys(this.props.business);
       this.MarkerManager.updateMarkers([targetBusiness])
     }
-    // else {
-    //   this.MarkerManager.updateMarkers(this.props.businesses)
-    // }
   }
 
   handleMarkerManager(business) {
@@ -54,9 +45,6 @@ class BusinessMap extends React.Component {
   }
 
   render() {
-    // if(!this.props.businesses){
-    //   return null;
-    // }
 
     return (
       <div className="map" ref="map">
