@@ -6,7 +6,6 @@ import Footer from '../footer/footer';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(this.props)
     this.state = { search: "", location: "" }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
@@ -15,7 +14,6 @@ class Header extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    //console.log("Searching");
     let redirect = "";
 
     if (this.state.search && this.state.location) {
@@ -34,7 +32,6 @@ class Header extends React.Component {
 
   handleOnClick(e) {
     e.preventDefault();
-    console.log("Hey")
   }
 
   update(field) {

@@ -16,7 +16,6 @@ class BusinessIndex extends React.Component {
   componentDidMount() {
     // window.scrollTo(0, 0);
     this.props.fetchBusinesses();
-    //console.log(this.props.match.params);
 
     //this.setState({test: "hey"});
 
@@ -24,7 +23,6 @@ class BusinessIndex extends React.Component {
 
   componentWillReceiveProps(props) {
     let business = props.business;
-    console.log(business)
     if (this.props.location.search != "") {
       // http://localhost:3000/#/businesses/search/details?keyword=pink&location=davis
 
@@ -45,7 +43,6 @@ class BusinessIndex extends React.Component {
         data = business.filter(business => business.city.toLowerCase().includes(details.city.toLowerCase()));
       }
 
-      console.log(business)
 
       this.setState({ business: data });
 
@@ -56,7 +53,6 @@ class BusinessIndex extends React.Component {
 
 
   render() {
-    console.log(this.state.business);
 
     return (
       <div>

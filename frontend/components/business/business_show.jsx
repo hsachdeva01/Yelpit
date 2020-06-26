@@ -178,7 +178,6 @@ class BusinessShow extends React.Component {
         </div>
         <div className="reviews-list">
           <div className="review-show-here">
-            {console.log(this.props.reviews)}
             {this.props.reviews.map(review => {
               return <ReviewList
               key={review.id}

@@ -5,7 +5,6 @@ const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_REVIEW:
-      console.log(this.props)
       const review = {[action.review.review.id]: action.review.review};
       return Object.assign({}, state, review)
     case RECEIVE_ALL_REVIEWS:

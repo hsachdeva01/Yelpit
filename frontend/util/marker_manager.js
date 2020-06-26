@@ -8,7 +8,6 @@ class MarkerManager{
 
   updateMarkers(businesses){
     let businessesObj = {};
-    {console.log(businesses)}
     businesses.forEach(business => businessesObj[business.id] = business);
 
     businesses.filter(business => !this.markers[business.id])
