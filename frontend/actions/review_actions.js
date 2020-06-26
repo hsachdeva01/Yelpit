@@ -22,12 +22,12 @@ export const receiveReviews = reviews => ({
 export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
-})
+});
 
 export const clearReviewErrors = () => ({
   type: RECEIVE_ERRORS,
   errors: []
-})
+});
 
 
 export const fetchReviews = () => dispatch => (
@@ -58,4 +58,4 @@ export const updateReview = review => dispatch => (
 export const deleteReview = reviewId => dispatch => (
   R_APIUtil.deleteReview(reviewId)
     .then(review => dispatch(removeReview(reviewId))
-))
+));
