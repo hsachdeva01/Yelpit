@@ -53,6 +53,7 @@ class ReviewList extends React.Component{
             {ratingStars()}
           </div>
           <div className="review-content"> 
+          {/* {this.props.review.author_id === this.props.author.id ? <button className="delete-review" onClick={() => this.props.deleteRevierw(review)}>Delete Review</button> : ""} */}
             {this.props.review.body}
           </div>
         </div>

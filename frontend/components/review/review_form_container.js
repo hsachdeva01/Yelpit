@@ -29,8 +29,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 // const mapDispatchToProps = dispatch => ({
-//   fetchBusiness: id => dispatch(fetchBusiness(id)),
-//   test: 1
+//   fetchBusiness: id => dispatch(fetchBusiness(id))
 // });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm)
