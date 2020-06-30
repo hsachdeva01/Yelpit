@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import BusinesHeader from './business_header_container'
 import BusinessIndexItem from './business_index_item'
 import Footer from '../footer/footer';
@@ -17,14 +16,11 @@ class BusinessIndex extends React.Component {
     // window.scrollTo(0, 0);
     this.props.fetchBusinesses();
 
-    //this.setState({test: "hey"});
-
   }
 
   componentWillReceiveProps(props) {
     let business = props.business;
     if (this.props.location.search != "") {
-      // http://localhost:3000/#/businesses/search/details?keyword=pink&location=davis
 
       const params = new URLSearchParams(this.props.location.search);
       const details = {
