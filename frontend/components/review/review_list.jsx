@@ -7,6 +7,17 @@ class ReviewList extends React.Component{
   }
 
   render(){
+
+    // const findId = () => {
+    //   if(!this.props.author.id){
+    //     <p>Sorry, not your account</p>
+    //   } else {
+    //     if(this.props.author.id === this.props.review.author_id){
+    //       return <p>Delete Review</p>
+    //     }
+    //   }
+    // }
+
     const ratingStars = () => {
       let rating;
       if(this.props.review.rating === 1 ){
@@ -53,7 +64,7 @@ class ReviewList extends React.Component{
             {ratingStars()}
           </div>
           <div className="review-content"> 
-          {/* {this.props.review.author_id === this.props.author.id ? <button className="delete-review" onClick={() => this.props.deleteRevierw(review)}>Delete Review</button> : ""} */}
+          {/* {findId()} */}
             {this.props.review.body}
           </div>
         </div>

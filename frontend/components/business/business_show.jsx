@@ -16,6 +16,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
+    let user = this.props.user;
 
     if(!this.props.business.photoUrls){
       return null;
@@ -178,8 +179,10 @@ class BusinessShow extends React.Component {
         </div>
         <div className="reviews-list">
           <div className="review-show-here">
+            {console.log(this.props)}
             {this.props.reviews.map(review => {
               return <ReviewList
+              theUser = {this.props.user.id === review.author_id ? <p>Delete Review</p> : ""}
               key={review.id}
               review={review}
               author={this.props.users[review.author_id]}
