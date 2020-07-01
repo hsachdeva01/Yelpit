@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import HomePageDisplay from './homepage_display_pictures'
 import Footer from '../footer/footer';
 
@@ -9,7 +9,6 @@ class Header extends React.Component {
     this.state = { search: "", location: "" }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
-    //this.testing = this.testing.bind(this);
   }
 
   handleSubmit(e) {

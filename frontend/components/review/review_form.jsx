@@ -64,7 +64,6 @@ class ReviewForm extends React.Component {
         </header>
 
         <div className="review-form">
-          {/* <p>Review by {this.props.user.first_name}</p> */}
           <form className="review-form-box" onSubmit={this.handleSubmit}>
             <Link to={`/businesses/${this.props.business.id}`}>
               <p className="business-name-form">{this.props.business.name}</p>

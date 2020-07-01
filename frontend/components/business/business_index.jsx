@@ -74,7 +74,6 @@ class BusinessIndex extends React.Component {
               <div key={idx}>
                 <BusinessIndexItem
                   business={business}
-                // key={business.id}
                 />
               </div>
             ))}
