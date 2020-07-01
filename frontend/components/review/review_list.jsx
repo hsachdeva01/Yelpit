@@ -8,15 +8,14 @@ class ReviewList extends React.Component{
 
   render(){
 
+
     // const findId = () => {
-    //   if(!this.props.author.id){
-    //     <p>Sorry, not your account</p>
-    //   } else {
-    //     if(this.props.author.id === this.props.review.author_id){
-    //       return <p>Delete Review</p>
+    //   let review = this.props.review;
+    //   if(this.props.author.id !== undefined && this.props.author.id === this.props.review.author_id){
+    //     return <button className="header-logout-button" onClick={() => this.props.deleteReview(review.id)}>delete</button>
     //     }
     //   }
-    // }
+
 
     const ratingStars = () => {
       let rating;
@@ -64,8 +63,8 @@ class ReviewList extends React.Component{
             {ratingStars()}
           </div>
           <div className="review-content"> 
-          {/* {findId()} */}
             {this.props.review.body}
+          {/* {findId()} */}
           </div>
         </div>
       </div>

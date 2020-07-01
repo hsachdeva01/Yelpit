@@ -7,10 +7,10 @@ export default (state = [], action) => {
       return [];
     case RECEIVE_ERRORS:
       return action.errors;
-    case REMOVE_REVIEW:
-      let newState = merge({}, state);
-      delete newState[action.review.id];
-      return newState;
+    // case REMOVE_REVIEW:
+    //   let newState = merge({}, state);
+    //   delete newState[action.review.id];
+    //   return newState;
     default:
       return state;
   }

@@ -6,11 +6,12 @@ import { isObject } from 'util';
 
 const mapStateToProps = state => ({
   users: Object.values(state.entities.users),
-  reviews: Object.values(state.entities.reviews)
+  reviews: Object.values(state.entities.reviews),
+  user_id: state.session.id
 });
 
 const mapDispatchToProps = dispatch => ({
-  deleteReview: review => dispatch(deleteReview(review)),
+  deleteReview: reviewId => dispatch(deleteReview(reviewId)),
   fetchUsers: () => dispatch(fetchUsers()),
   fetchReviews: businessId => dispatch(fetchReviews(businessId))
 });
