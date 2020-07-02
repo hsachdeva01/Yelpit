@@ -15,7 +15,7 @@ class BusinessShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
-    this.props.fetchUsers().then( () => this.props.fetchBusiness(this.props.match.params.businessId))
+    // this.props.fetchUsers().then( () => this.props.fetchBusiness(this.props.match.params.businessId))
   }
 
   render() {
@@ -23,7 +23,7 @@ class BusinessShow extends React.Component {
       return null;
     }
 
-    const currentUser = (this.props.user) ? (
+    const currentUser = (this.props.user.length !== 0) ? (
       <div className="reviews">
         <span>
           {" "}
@@ -180,7 +180,6 @@ class BusinessShow extends React.Component {
         </div>
         <div className="reviews-list">
           <div className="review-show-here">
-            {console.log(this.props)}
             {this.props.reviews.map(review => {
               return <ReviewList
               key={review.id}

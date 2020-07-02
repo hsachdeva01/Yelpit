@@ -1,10 +1,11 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 const ReviewList = (props) => {
-
-
+  {console.log(props)}
+  
   const findId = () => {
+    {console.log(props)}
     if(props.user_id === props.review.author_id){
       return <button className="header-logout-button" onClick={() => props.deleteReview(props.review.id)}><i class="fa fa-trash" aria-hidden="true"></i></button>
       }
@@ -57,10 +58,10 @@ const ReviewList = (props) => {
           {ratingStars()}
         </div>
         <div className="review-content">
-          {console.log(props.user_id)}
           {props.review.body}
-          {findId()}
+          
         </div>
+          {findId()}
       </div>
     </div>
   )
