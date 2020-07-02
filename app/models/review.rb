@@ -8,4 +8,10 @@ class Review < ApplicationRecord
     class_name: :User
 
   belongs_to :business
+
+  has_many :comments,
+  foreign_key: :review_id,
+  class_name: :Comment,
+  dependent: :destroy
+  
 end
