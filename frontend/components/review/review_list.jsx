@@ -6,7 +6,7 @@ const ReviewList = (props) => {
 
   const findId = () => {
     if(props.user_id === props.review.author_id){
-      return <button className="header-logout-button" onClick={() => props.deleteReview(props.review.id)}>delete</button>
+      return <button className="header-logout-button" onClick={() => props.deleteReview(props.review.id)}><i class="fa fa-trash" aria-hidden="true"></i></button>
       }
     }
 

@@ -17,7 +17,10 @@ class BusinessShow extends React.Component {
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchUsers().then( () => this.props.fetchBusiness(this.props.match.params.businessId))
   }
-  
+
+  componentDidUpdate() {
+    this.props.reviews
+  }
 
   render() {
     if(!this.props.business.photoUrls){
