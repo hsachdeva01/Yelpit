@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BusinessHeader from './business_header_container';
 import Footer from '../footer/footer';
 import BusinessMap from './business_map';
@@ -8,12 +8,16 @@ import ReviewList from '../review/review_list'
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      user_id: ""
+    }
   }
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
-
+    this.props.fetchUsers().then( () => this.props.fetchBusiness(this.props.match.params.businessId))
   }
+  
 
   render() {
     if(!this.props.business.photoUrls){
@@ -177,12 +181,14 @@ class BusinessShow extends React.Component {
         </div>
         <div className="reviews-list">
           <div className="review-show-here">
+            {console.log(this.props)}
             {this.props.reviews.map(review => {
               return <ReviewList
               key={review.id}
               review={review}
               author={this.props.users[review.author_id]}
-              // deleteReview={this.props.deleteReview}
+              user_id={this.props.user.id}
+              deleteReview={this.props.deleteReview}
             />})}
           </div>
         </div>
