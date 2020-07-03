@@ -2,6 +2,7 @@ export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_REVIEW_DETAIL = 'RECEIVE_REVIEW_DETAIL';
 import * as R_APIUtil from '../util/review_api_util';
 
 export const receiveReview = (review) => ({
@@ -29,6 +30,11 @@ export const clearReviewErrors = () => ({
   errors: []
 });
 
+export const receiveReviewDetail = payload => ({
+  type: RECEIVE_REVIEW_DETAIL,
+  payload
+});
+
 
 export const fetchReviews = () => dispatch => (
   R_APIUtil.fetchReviews()
@@ -39,7 +45,7 @@ export const fetchReviews = () => dispatch => (
 
 export const fetchReview = id => dispatch => (
   R_APIUtil.fetchReviews(id)
-  .then(review => (dispatch(receiveReviews(review))
+  .then(payload => (dispatch(receiveReviewDetail(payload))
   ))
 );
 
