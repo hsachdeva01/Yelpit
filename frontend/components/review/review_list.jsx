@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import CommentForm from '../comment/comment_container';
 
 const ReviewList = (props) => {
   {console.log(props)}
@@ -59,7 +60,7 @@ const ReviewList = (props) => {
         </div>
         <div className="review-content">
           {props.review.body}
-          
+          <CommentForm reviewId={props.review.id} />
         </div>
           {findId()}
       </div>
