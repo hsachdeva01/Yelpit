@@ -1,18 +1,19 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CommentForm from './comment_form';
-import { createComment } from '../../actions/comment_actions';
+import { createComment, receiveComments } from '../../actions/comment_actions';
 import { fetchComments } from '../../util/comments_api_util';
 
 const mapStateToProps = (state, ownProps) => ({
+  business: state.entities.businesses[ownProps.match.params.businessId] || {},
   reviewId: ownProps.reviewId,
-  userId: state.session.id,
-  content: ownProps.content
+  userId: state.session.id
 });
 
 const mapDispatchToProps = dispatch => ({
   createComment: comment => dispatch(createComment(comment)),
-  fetchComments: () => dispatch(fetchComments()) 
+  fetchUsers: () => dispatch(fetchUsers()),
+  fetchComments: () => dispatch(receiveComments()) 
 });
 
 

@@ -45,7 +45,7 @@ class BusinessShow extends React.Component {
 
     return (
       <div className="business-show-all">
-        {console.log(this.props)}
+        {/* {console.log(this.props)} */}
         <div className="business-main">
           <div className="business-header">
             <BusinessHeader />
@@ -189,6 +189,7 @@ class BusinessShow extends React.Component {
               author={this.props.users[review.author_id]}
               user_id={this.props.user.id}
               deleteReview={this.props.deleteReview}
+              comments={this.props.comments}
             />})}
           </div>
         </div>
