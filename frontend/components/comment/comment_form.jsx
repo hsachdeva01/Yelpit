@@ -26,6 +26,7 @@ class CommentForm extends React.Component{
     return(
       <form onSubmit={this.handleSubmit} className="comment-form">
         <div className="comment-body">
+          {console.log(this.props)}
           <textarea 
             value={this.state.content}
             placeholder="Write a comment..."

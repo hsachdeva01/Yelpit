@@ -7,3 +7,12 @@ json.user do
 end
 
 json.average_rating @review.business.average_rating
+
+
+json.comments do 
+  @review.comments.each do |comment|
+    json.set! comment.id do 
+      json.extract! comment, :id, :user_id, :review_id, :content
+    end
+  end
+end

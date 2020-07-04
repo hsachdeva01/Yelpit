@@ -6,5 +6,8 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.text :content, null: false
       t.timestamps
     end
+
+    add_index :comments, :review_id
+    add_index :comments, :user_id
   end
 end
