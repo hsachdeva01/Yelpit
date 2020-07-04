@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import CommentForm from '../comment/comment_container';
 
 const ReviewList = (props) => {
-  {console.log(props)}
   
   const findId = () => {
-    {console.log(props)}
     if(props.user_id === props.review.author_id){
       return <button className="header-logout-button" onClick={() => props.deleteReview(props.review.id)}><i className="fa fa-trash" aria-hidden="true"></i></button>
       }

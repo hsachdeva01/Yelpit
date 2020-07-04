@@ -44,6 +44,7 @@ class BusinessShow extends React.Component {
 
     return (
       <div className="business-show-all">
+        {console.log(this.props)}
         <div className="business-main">
           <div className="business-header">
             <BusinessHeader />
