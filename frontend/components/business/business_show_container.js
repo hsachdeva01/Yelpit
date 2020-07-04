@@ -4,7 +4,7 @@ import BusinessShow from './business_show';
 import { fetchBusiness } from '../../actions/business_actions';
 import { fetchReviews, deleteReview } from '../../actions/review_actions';
 import { fetchUsers } from '../../actions/user_actions'
-import { fetchComments } from '../../actions/comment_actions'
+import {receiveComments } from '../../actions/comment_actions'
 
 const mapStateToProps = (state, ownProps) => ({
   business: state.entities.businesses[ownProps.match.params.businessId] || {},
