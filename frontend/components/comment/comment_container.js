@@ -6,8 +6,8 @@ import { fetchComments } from '../../util/comments_api_util';
 
 const mapStateToProps = (state, ownProps) => ({
   business: state.entities.businesses[ownProps.match.params.businessId] || {},
-  reviewId: ownProps.reviewId,
-  userId: state.session.id
+  reviewId: ownProps.reviewId || [],
+  userId: state.session.id || []
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -11,6 +11,7 @@ class BusinessShow extends React.Component {
     this.state = {
       user_id: ""
     }
+    // this.comments = this.comments.bind(this);
   }
 
   componentDidMount() {
@@ -18,6 +19,28 @@ class BusinessShow extends React.Component {
     this.props.fetchComments();
     // this.props.fetchUsers().then( () => this.props.fetchBusiness(this.props.match.params.businessId))
   }
+
+  comments(){
+    let comments = Object.values(this.props.comments)
+    for(let i = 0; i < comments.length; i++){
+      let objectComment = comments[i];
+      for(let key in objectComment){
+        if(key === 'review_id' && objectComment.review_id === this.props.reviews[0].id){
+          // console.log(objectComment.review_id)
+          // console.log(this.props.reviews[0].id)
+          // console.log('hi')
+          <ul>
+            {objectComment.content}
+          </ul>
+
+        }
+      }
+    }
+        // <ul>
+        //   {console.log('hello')}
+        // </ul>
+    }
+
 
   render() {
     if(!this.props.business.photoUrls){
@@ -45,7 +68,6 @@ class BusinessShow extends React.Component {
 
     return (
       <div className="business-show-all">
-        {/* {console.log(this.props)} */}
         <div className="business-main">
           <div className="business-header">
             <BusinessHeader />
@@ -182,6 +204,7 @@ class BusinessShow extends React.Component {
         </div>
         <div className="reviews-list">
           <div className="review-show-here">
+            {/* {console.log(Object.values(this.props.comments))} */}
             {this.props.reviews.map(review => {
               return <ReviewList
               key={review.id}
@@ -189,8 +212,15 @@ class BusinessShow extends React.Component {
               author={this.props.users[review.author_id]}
               user_id={this.props.user.id}
               deleteReview={this.props.deleteReview}
-              comments={this.props.comments}
-            />})}
+              comments={this.props.fetchComments}
+            />}
+            )}
+            <div>
+              <div>
+              </div>
+              <div>
+              </div>
+            </div>
           </div>
         </div>
 

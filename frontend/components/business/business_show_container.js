@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
   reviews: Object.values(state.entities.reviews) || [],
   users: state.entities.users || {},
   user: state.entities.users[state.session.id] || [],
-  comments: state.entities.comments 
+  comments: state.entities.comments || {}
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -9,7 +9,6 @@ const ReviewList = (props) => {
       }
     }
 
-
   const ratingStars = () => {
     let rating;
     if (props.review.rating === 1) {
