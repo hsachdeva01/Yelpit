@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <% favicon_link_tag asset_path("favicon.ico") %>
     <title>Yelpit</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/0deb597c3f.js" crossorigin="anonymous"></script>
 
+  <%= favicon_link_tag asset_path("favicon.ico") %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyANzwoEW6mIKIPvPHTt99URE1gPvz5S92c" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>

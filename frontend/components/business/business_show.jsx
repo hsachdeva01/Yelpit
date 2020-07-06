@@ -22,20 +22,23 @@ class BusinessShow extends React.Component {
 
   comments(){
     let comments = Object.values(this.props.comments)
+    let allComments = ""
     for(let i = 0; i < comments.length; i++){
       let objectComment = comments[i];
       for(let key in objectComment){
         if(key === 'review_id' && objectComment.review_id === this.props.reviews[0].id){
           // console.log(objectComment.review_id)
           // console.log(this.props.reviews[0].id)
-          // console.log('hi')
-          <ul>
-            {objectComment.content}
-          </ul>
+          {console.log('hi')}
+          // <ul>
+          //   {objectComment.content}
+          // </ul>
+          allComments += objectComment.content
 
         }
       }
     }
+    return allComments;
         // <ul>
         //   {console.log('hello')}
         // </ul>
@@ -205,6 +208,7 @@ class BusinessShow extends React.Component {
         <div className="reviews-list">
           <div className="review-show-here">
             {/* {console.log(Object.values(this.props.comments))} */}
+            {this.comments()}
             {this.props.reviews.map(review => {
               return <ReviewList
               key={review.id}
