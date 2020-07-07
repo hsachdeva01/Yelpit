@@ -4,6 +4,7 @@ import BusinessHeader from './business_header_container';
 import Footer from '../footer/footer';
 import BusinessMap from './business_map';
 import ReviewList from '../review/review_list'
+import CommentForm from '../comment/comment_form';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -11,38 +12,32 @@ class BusinessShow extends React.Component {
     this.state = {
       user_id: ""
     }
-    // this.comments = this.comments.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchComments();
-    // this.props.fetchUsers().then( () => this.props.fetchBusiness(this.props.match.params.businessId))
   }
 
   comments(){
     let comments = Object.values(this.props.comments)
     let allComments = ""
+    this.props.reviews.map(review => {
     for(let i = 0; i < comments.length; i++){
       let objectComment = comments[i];
       for(let key in objectComment){
-        if(key === 'review_id' && objectComment.review_id === this.props.reviews[0].id){
-          // console.log(objectComment.review_id)
-          // console.log(this.props.reviews[0].id)
-          {console.log('hi')}
-          // <ul>
-          //   {objectComment.content}
-          // </ul>
-          allComments += objectComment.content
-
+        if(key === 'review_id' && objectComment.review_id === review.id){
+          allComments += objectComment.content + review.id
         }
       }
     }
+    {console.log(allComments)}
     return allComments;
         // <ul>
         //   {console.log('hello')}
         // </ul>
-    }
+    })
+  }
 
 
   render() {
@@ -171,10 +166,10 @@ class BusinessShow extends React.Component {
                   {this.props.business.phone_number.slice(3, 6)} -{" "}
                   {this.props.business.phone_number.slice(6)}
                 </div>
-                <div className="business-menu">
+                {/* <div className="business-menu">
                   <i className="fas fa-utensils" />
                   <p>Full Menu</p>
-                </div>
+                </div> */}
                 <div className="business-direction">
                   <i className="fas fa-directions fa-lg"></i> 
                   <a className="direction-map" href={`https://www.google.com/maps/@${this.props.business.latitude},${this.props.business.longitude},20z`}>
@@ -208,7 +203,6 @@ class BusinessShow extends React.Component {
         <div className="reviews-list">
           <div className="review-show-here">
             {/* {console.log(Object.values(this.props.comments))} */}
-            {this.comments()}
             {this.props.reviews.map(review => {
               return <ReviewList
               key={review.id}
@@ -216,14 +210,10 @@ class BusinessShow extends React.Component {
               author={this.props.users[review.author_id]}
               user_id={this.props.user.id}
               deleteReview={this.props.deleteReview}
-              comments={this.props.fetchComments}
-            />}
+              />}
             )}
             <div>
-              <div>
-              </div>
-              <div>
-              </div>
+              {this.comments()}
             </div>
           </div>
         </div>
