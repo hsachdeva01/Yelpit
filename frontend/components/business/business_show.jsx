@@ -33,9 +33,6 @@ class BusinessShow extends React.Component {
     }
     {console.log(allComments)}
     return allComments;
-        // <ul>
-        //   {console.log('hello')}
-        // </ul>
     })
   }
 
@@ -211,9 +208,9 @@ class BusinessShow extends React.Component {
               user_id={this.props.user.id}
               deleteReview={this.props.deleteReview}
               />}
-            )}
+            )
+            }
             <div>
-              {this.comments()}
             </div>
           </div>
         </div>

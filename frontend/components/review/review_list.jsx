@@ -7,6 +7,10 @@ class ReviewList extends React.Component{
     super(props)
   }
 
+  componentDidMount(){
+    // this.props.fetchComments();
+  }
+
   findId(){
     if (this.props.user_id === this.props.review.author_id) {
       {console.log(this.props)}
