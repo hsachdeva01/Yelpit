@@ -19,22 +19,22 @@ class BusinessShow extends React.Component {
     this.props.fetchComments();
   }
 
-  comments(){
-    let comments = Object.values(this.props.comments)
-    let allComments = ""
-    this.props.reviews.map(review => {
-    for(let i = 0; i < comments.length; i++){
-      let objectComment = comments[i];
-      for(let key in objectComment){
-        if(key === 'review_id' && objectComment.review_id === review.id){
-          allComments += objectComment.content + review.id
-        }
-      }
-    }
-    {console.log(allComments)}
-    return allComments;
-    })
-  }
+  // comments(){
+  //   let comments = Object.values(this.props.comments) //array of objects
+  //   let allComments = ""
+  //   this.props.reviews.map(review => {
+  //   for(let i = 0; i < comments.length; i++){ 
+  //     let objectComment = comments[i];
+  //     for(let key in objectComment){
+  //       if(key === 'review_id' && objectComment.review_id === review.id){
+  //         allComments += objectComment.content
+  //       }
+  //     }
+  //   }
+  //   {console.log(allComments)}
+  //   return allComments;
+  //   })
+  // }
 
 
   render() {
@@ -208,11 +208,13 @@ class BusinessShow extends React.Component {
               author={this.props.users[review.author_id]}
               user_id={this.props.user.id}
               deleteReview={this.props.deleteReview}
+              comments={this.props.comments}
               // comment={<CommentForm/>}
               />}
             )
             }
             <div>
+              {/* {this.comments()} */}
             </div>
           </div>
         </div>

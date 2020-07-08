@@ -7,13 +7,39 @@ class ReviewList extends React.Component{
     super(props)
   }
 
+  componentDidMount(){
+    this.props.comments
+  }
+
   findId(){
     if (this.props.user_id === this.props.review.author_id) {
-      {console.log(this.props)}
       return <button className="header-logout-button" onClick={() => this.props.deleteReview(this.props.review.id)}><i className="fa fa-trash" aria-hidden="true"></i></button>
     }
   }
-  
+
+  // findCommentIds(){
+  //   for(var key in this.props.review){
+  //     if(key === 'comment_ids'){
+  //       return this.props.review.key;
+  //     }
+  //   }
+  //   return null;
+  // }
+
+  findComments(){
+    let result = [];
+    for(let i = 0; i < this.props.review.comment_ids.length; i++){
+      for(let j = 0; j < this.props.comments.length; j++){
+        let singleComment = this.props.comments[j];
+        for(var key in singleComment){
+          if(key === 'id' && this.props.review.comment_ids[i] === singleComment.id){
+            result.push(singleComment.content);
+          }
+        }
+      }
+    }
+    return result;
+  }
 
   ratingStars(){
     let rating;
@@ -54,8 +80,6 @@ class ReviewList extends React.Component{
   }
 
   render(){
-    
-    {console.log(this.props)}
     return (
       <div className="review-list">
         <div className="user-icon">
@@ -66,6 +90,15 @@ class ReviewList extends React.Component{
           </div>
           <div className="review-content">
             {this.props.review.body}
+            <div>
+              {this.findComments().map((comment, key) => {
+                return (
+                  <ul key={key}>
+                    {comment}
+                  </ul>
+                )
+              })}
+            </div>
             <CommentForm reviewId={this.props.review.id} />
           </div>
           {this.findId()}
