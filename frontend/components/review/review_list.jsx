@@ -13,7 +13,7 @@ class ReviewList extends React.Component{
 
   findId(){
     if (this.props.user_id === this.props.review.author_id) {
-      return <button className="header-logout-button" onClick={() => this.props.deleteReview(this.props.review.id)}><i className="fa fa-trash" aria-hidden="true"></i></button>
+      return <button className="remove-review" onClick={() => this.props.deleteReview(this.props.review.id)}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Review</i></i></button>
     }
   }
 
@@ -89,17 +89,20 @@ class ReviewList extends React.Component{
             {this.ratingStars()}
           </div>
           <div className="review-content">
+            <div id="review-body">
+              
             {this.props.review.body}
-            <div>
-              {this.findComments().map((comment, key) => {
+            </div>
+              <CommentForm reviewId={this.props.review.id} />
+            <div className="each-comment">
+              {this.findComments().reverse().map((comment, key) => {
                 return (
-                  <ul key={key}>
+                  <ul id="comment" key={key}>
                     {comment}
                   </ul>
                 )
               })}
             </div>
-            <CommentForm reviewId={this.props.review.id} />
           </div>
           {this.findId()}
         </div>

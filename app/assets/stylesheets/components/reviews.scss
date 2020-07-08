@@ -102,3 +102,25 @@
   font-weight: bolder;
   margin-left: 20px;
 }
+
+.trash{
+  display: none;
+}
+
+.remove-review:hover .trash{
+  display: inline;
+}
+
+.remove-review{
+  color: #cc2121;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border:transparent;
+}
+
+.trash{
+  color: red;
+  background-color: transparent;
+  font-size: 15px;
+}
