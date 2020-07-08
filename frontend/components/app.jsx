@@ -8,6 +8,7 @@ import { AuthRoute } from '../util/route_util';
 import BusinessIndexContainer from "./business/business_index_container";
 import BusinessShowContainer from "./business/business_show_container";
 import ReviewForm from './review/review_form_container';
+// import EditReviewForm from './review/edit_review_container';
 
 
 
@@ -20,6 +21,7 @@ const App = () => (
       <Route exact path="/" component={HeaderContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      {/* <Route exact path="/reviews/:businessId/:reviewId/edit" component={EditReviewForm}/> */}
       <Route exact path="/businesses" component={BusinessIndexContainer} />
       <Route path="/businesses/search/:query?" component={BusinessIndexContainer} />
       {/* <Route path="/:id" component={HeaderContainer} /> */}

@@ -209,6 +209,7 @@ class BusinessShow extends React.Component {
               user_id={this.props.user.id}
               deleteReview={this.props.deleteReview}
               comments={this.props.comments}
+              business={this.props.business}
               // comment={<CommentForm/>}
               />}
             )

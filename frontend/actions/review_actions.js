@@ -57,7 +57,7 @@ export const createReview = (review) => dispatch => (
 
 export const updateReview = review => dispatch => (
   R_APIUtil.updateReview(review)
-  .then(payload => dispatch(receiveReview(payload)
+  .then(review => dispatch(receiveReview(review)
   ))
 );
 
