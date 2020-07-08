@@ -7,16 +7,13 @@ class ReviewList extends React.Component{
     super(props)
   }
 
-  componentDidMount(){
-    // this.props.fetchComments();
-  }
-
   findId(){
     if (this.props.user_id === this.props.review.author_id) {
       {console.log(this.props)}
       return <button className="header-logout-button" onClick={() => this.props.deleteReview(this.props.review.id)}><i className="fa fa-trash" aria-hidden="true"></i></button>
     }
   }
+  
 
   ratingStars(){
     let rating;
@@ -58,6 +55,7 @@ class ReviewList extends React.Component{
 
   render(){
     
+    {console.log(this.props)}
     return (
       <div className="review-list">
         <div className="user-icon">

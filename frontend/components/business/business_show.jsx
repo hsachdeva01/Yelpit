@@ -4,7 +4,6 @@ import BusinessHeader from './business_header_container';
 import Footer from '../footer/footer';
 import BusinessMap from './business_map';
 import ReviewList from '../review/review_list'
-import CommentForm from '../comment/comment_form';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -13,6 +12,7 @@ class BusinessShow extends React.Component {
       user_id: ""
     }
   }
+
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
@@ -198,6 +198,7 @@ class BusinessShow extends React.Component {
           </div>
         </div>
         <div className="reviews-list">
+
           <div className="review-show-here">
             {/* {console.log(Object.values(this.props.comments))} */}
             {this.props.reviews.map(review => {
@@ -207,6 +208,7 @@ class BusinessShow extends React.Component {
               author={this.props.users[review.author_id]}
               user_id={this.props.user.id}
               deleteReview={this.props.deleteReview}
+              // comment={<CommentForm/>}
               />}
             )
             }

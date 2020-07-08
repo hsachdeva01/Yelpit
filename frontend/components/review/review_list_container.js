@@ -3,7 +3,7 @@ import { fetchUsers } from '../../actions/user_actions';
 import { fetchReviews, deleteReview } from '../../actions/review_actions';
 import { fetchBusiness } from '../../actions/business_actions';
 import ReviewList from './review_list';
-import { fetchComments} from '../../actions/comment_actions';
+import { fetchComments, receiveComments} from '../../actions/comment_actions';
 import { selectCommentsByReviews } from '../../reducers/selectComment_reducer'
 
 const mapStateToProps = state => ({
