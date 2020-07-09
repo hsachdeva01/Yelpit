@@ -11,23 +11,41 @@ const getCoordsObj = latLng => ({
 class BusinessMap extends React.Component {
   constructor(props) {
     super(props);
+    this.position = this.props.position || "";
+    this.center = this.props.center || { lat: 37.773972, lng: -122.431297};
+    this.businesses = this.props.businesses || "";
+    this.update = false;
+    this.linkTrack = 'true';
+    this.tracker = 0;
   }
 
-  componentDidMount() {
-    const map = this.refs.map
-    const mapOptions = {
-      center: {
-        lat: this.props.cords ? this.props.cords.lat : 37.773972,
-        lng: this.props.cords ? this.props.cords.long : -122.431297,
-      },
-      zoom: 13
-    };
 
-    this.map = new google.maps.Map(map, mapOptions);
-    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerManager.bind(this), this.props.singleBusiness)
-    if (this.props.singleBusiness) {
-      this.MarkerManager.fetchBusiness(this.props.businessId)
+  shouldComponentUpdate(ownProps){
+    let tracker;
+    if(this.props.history) tracker = this.props.history.location.state;
+    if(ownProps.searching === 'true') return false;
+    if(tracker === 'map'){
+      return true;
     }
+
+    let tracking;
+    if(this.props.location) tracking = this.props.location.linkTrack || undefined;
+    if(tracking !== undefined && this.props.thelocation === 'true') return true;
+
+    if((this.props.thelocation === 'true' && this.tracker < 2)){
+      this.tracker++;
+      return true;
+    }
+
+    if(this.update === false){
+      this.update = true;
+      return true
+    } else {
+      return false;
+    }
+  }
+  componentDidMount() {
+
   }
 
   componentDidUpdate() {
