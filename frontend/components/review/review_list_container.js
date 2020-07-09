@@ -5,6 +5,7 @@ import { fetchBusiness } from '../../actions/business_actions';
 import ReviewList from './review_list';
 import { fetchComments, receiveComments} from '../../actions/comment_actions';
 import { selectCommentsByReviews } from '../../reducers/selectComment_reducer'
+import { deleteComment } from '../../actions/comment_actions'
 
 const mapStateToProps = state => ({
   business: state.entities.businesses[ownProps.match.params.businessId] || {},
@@ -16,6 +17,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   deleteReview: reviewId => dispatch(deleteReview(reviewId)),
+  deleteComment: commentId => dispatch(deleteComment(commentId)),
   fetchUsers: () => dispatch(fetchUsers()),
   fetchReviews: businessId => dispatch(fetchReviews(businessId)),
   fetchBusiness: businessId => dispatch(fetchBusiness(businessId)),

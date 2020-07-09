@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :businesses, only: [:index, :show]
     resources :reviews
-    resources :comments, only: [:index, :create, :show, :destory]
+    resources :comments, only: [:index, :create, :show, :destroy]
   end
 end

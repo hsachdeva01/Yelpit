@@ -4,7 +4,7 @@ import BusinessShow from './business_show';
 import { fetchBusiness } from '../../actions/business_actions';
 import { fetchReviews, deleteReview } from '../../actions/review_actions';
 import { fetchUsers } from '../../actions/user_actions'
-import {fetchComments } from '../../actions/comment_actions'
+import {fetchComments, deleteComment } from '../../actions/comment_actions'
 
 const mapStateToProps = (state, ownProps) => ({
   business: state.entities.businesses[ownProps.match.params.businessId] || {},
@@ -18,6 +18,7 @@ const mapDispatchToProps = dispatch => ({
   fetchBusiness: businessId => dispatch(fetchBusiness(businessId)),
   fetchUsers: () => dispatch(fetchUsers()),
   deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
+  deleteComment: (commentId) => dispatch(deleteComment(commentId)),
   fetchComments: () => dispatch(fetchComments())
 
 });

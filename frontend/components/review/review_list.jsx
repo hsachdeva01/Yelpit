@@ -7,11 +7,7 @@ class ReviewList extends React.Component{
     super(props)
   }
 
-  componentDidMount(){
-    this.props.comments
-  }
-
-  findId(){
+  deleteReview(){
     if (this.props.user_id === this.props.review.author_id) {
       return <Link to={`/businesses/${this.props.business.id}`}><button className="remove-review" onClick={() => this.props.deleteReview(this.props.review.id)}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Review</i></i></button></Link>
     }
@@ -25,6 +21,7 @@ class ReviewList extends React.Component{
   //   }
   //   return null;
   // }
+  
 
   findComments(){
     let result = [];
@@ -32,8 +29,14 @@ class ReviewList extends React.Component{
       for(let j = 0; j < this.props.comments.length; j++){
         let singleComment = this.props.comments[j];
         for(var key in singleComment){
-          if(key === 'id' && this.props.review.comment_ids[i] === singleComment.id){
-            result.push(singleComment.content);
+          if(singleComment.user_id === this.props.user_id){
+            if(key === 'id' && this.props.review.comment_ids[i] === singleComment.id){
+              result.push(singleComment.id + singleComment.content + ' ' + 'useridcheck');
+            }
+          } else {
+            if (key === 'id' && this.props.review.comment_ids[i] === singleComment.id) {
+              result.push(singleComment.id + ' ' + singleComment.content + 'useridcheck');
+            }
           }
         }
       }
@@ -80,6 +83,7 @@ class ReviewList extends React.Component{
   }
 
   render(){
+    {console.log(this.props)}
     return (
       <div className="review-list">
         <div className="user-icon">
@@ -96,18 +100,20 @@ class ReviewList extends React.Component{
               <CommentForm reviewId={this.props.review.id} />
             <div className="each-comment">
               {this.findComments().reverse().map((comment, key) => {
+                console.log(this.props)
                 return (
                   <ul id="comment" key={key}>
-                    {comment}
+                    {comment.includes('useridcheck') ? comment.includes(this.props.user_id) ? <p>{comment.split(' ').slice(0, -1).join(' ').slice(2, -1)}
+                      <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0,2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
+                    </p> : comment : 'hi'}
                   </ul>
                 )
               })}
             </div>
              <div>
-
             </div>
           </div>
-          {this.findId()}
+          {this.deleteReview()}
         </div>
       </div>
     )
