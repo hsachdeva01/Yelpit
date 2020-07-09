@@ -59,19 +59,19 @@ class BusinessShow extends React.Component {
         </div>
     )
 
-    const businessMap = () => {
-      if (!this.props.business.longitude) {
-        return "";
-      } else {
+    // const businessMap = () => {
+    //   if (!this.props.business.longitude) {
+    //     return "";
+    //   } else {
 
-        const businessPosition = { lat: this.props.business.latitude, lng: this.props.business.longitude }
-        const mapCenter = { lat: this.props.business.latitude, lng: this.props.business.longitude };
+    //     const businessPosition = { lat: this.props.business.latitude, lng: this.props.business.longitude }
+    //     const mapCenter = { lat: this.props.business.latitude, lng: this.props.business.longitude };
 
-        return (
-          <BusinessMap center={mapCenter} position={businessPosition} />
-        )
-      }
-    }
+    //     return (
+    //       <BusinessMap center={mapCenter} position={businessPosition} />
+    //     )
+    //   }
+    // }
 
 
     return (
@@ -127,7 +127,12 @@ class BusinessShow extends React.Component {
                     <div className="location">
                       {/* <BusinessMap cords={{ lat: this.props.business.latitude, long: this.props.business.longitude }} /> */}
                       <div className='map'>
-                        {businessMap()}
+                        {/* {businessMap()} */}
+                        <BusinessMap
+                          businesses={[this.props.business]}
+                          type="show"
+                          zoom="false"
+                        />
                       </div>
                     </div>
                    <div> {this.props.business.address} {this.props.business.state} {this.props.business.city} {this.props.business.zip_code} </div>
