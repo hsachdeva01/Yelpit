@@ -126,7 +126,7 @@ class BusinessShow extends React.Component {
                   <div className="map">
                     <div className="location">
                       {/* <BusinessMap cords={{ lat: this.props.business.latitude, long: this.props.business.longitude }} /> */}
-                      <div className='map'>
+                      <div className='show-map'>
                         {/* {businessMap()} */}
                         <BusinessMap
                           businesses={[this.props.business]}

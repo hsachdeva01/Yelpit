@@ -9,43 +9,49 @@ class BusinessHeader extends React.Component {
   render() {
     const currentUser = () => (
       <div className="business-header-main">
-        <div className="application-logo">
-          <p id="application-name">
-            <Link to="/">Yelpit</Link>
-          </p>
-        <div className="business-page-searchbar">
-          <input
-            className="business-page-search"
-            placeholder="tacos, indian food, cheap dinner"
-            type="text"
-          />
-          <input
-            className="business-page-location"
-            placeholder="San Francisco, CA"
-            type="text"
-          />
-          <label className="business-page-search-icon">
-              <Link to="/businesses"><i className="fas fa-search"></i></Link>  
-          </label>
-        </div>
-        <div className="user-logged-in">
-          <span className="username">{`Hello,  ${this.props.currentUser.first_name}`}</span>
-          <span className="logout-business" onClick={this.props.logout}>
-            Log Out
-          </span>
-        </div>
+        <div className="business-header-inner">
+          <div className="application-logo">
+            <p id="application-name">
+              <Link to="/">Yelpit</Link>
+            </p>
+          </div>
+          <form className="search-bar">
+            <span className="business-page-searchbar">
+              <input
+                className="business-page-search"
+                placeholder="tacos, indian food, cheap dinner"
+                type="text"
+              />
+              <input
+                className="business-page-location"
+                placeholder="San Francisco, CA"
+                type="text"
+              />
+              <label className="business-page-search-icon">
+                  <Link to="/businesses"><i className="fas fa-search"></i></Link>  
+              </label>
+            </span>
+          </form>
+          <div className="user-logged-in">
+            <span className="username">{`Hello,  ${this.props.currentUser.first_name}`}</span>
+            <span className="logout-business" onClick={this.props.logout}>
+              Log Out
+            </span>
+          </div>
         </div>
       </div>
     );
 
     const userNotLoggedIn = () => (
       <div className="business-header-main">
+        <div className="business-header-inner">
         <div className="application-logo">
           <p id="application-name">
             <Link to="/">Yelpit</Link>
           </p>
         </div>
-        <div className="business-page-searchbar">
+        <form className="search-bar">
+          <span className="business-page-searchbar">
           <input
             className="business-page-search"
             placeholder="tacos, indian food, cheap dinner"
@@ -61,7 +67,8 @@ class BusinessHeader extends React.Component {
               <Link to="/businesses"><i className="fas fa-search"></i></Link>
             </label>
           </label>
-        </div>
+            </span>
+        </form>
         <div className="user-not-logged-in">
           <p className="login">
             <Link to="/login">Log In</Link>
@@ -69,6 +76,7 @@ class BusinessHeader extends React.Component {
           <p className="signup">
             <Link to="/signup">Sign Up</Link>
           </p>
+        </div>
         </div>
       </div>
     );
