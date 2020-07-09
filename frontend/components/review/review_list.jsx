@@ -31,11 +31,11 @@ class ReviewList extends React.Component{
         for(var key in singleComment){
           if(singleComment.user_id === this.props.user_id){
             if(key === 'id' && this.props.review.comment_ids[i] === singleComment.id){
-              result.push(singleComment.id + singleComment.content + ' ' + 'useridcheck');
+              result.push(singleComment.id + ' ' + singleComment.user_id + ' ' + singleComment.content + ' ' + 'useridcheck');
             }
           } else {
             if (key === 'id' && this.props.review.comment_ids[i] === singleComment.id) {
-              result.push(singleComment.id + ' ' + singleComment.content + 'useridcheck');
+              result.push(singleComment.id + ' ' + singleComment.content + ' ' + 'useridcheck');
             }
           }
         }
@@ -83,7 +83,6 @@ class ReviewList extends React.Component{
   }
 
   render(){
-    {console.log(this.props)}
     return (
       <div className="review-list">
         <div className="user-icon">
@@ -99,16 +98,51 @@ class ReviewList extends React.Component{
             </div>
               <CommentForm reviewId={this.props.review.id} />
             <div className="each-comment">
-              {this.findComments().reverse().map((comment, key) => {
-                console.log(this.props)
+              {this.props.currentUser ? this.findComments().reverse().map((comment, key) => {
+                // console.log(this.props)
+                // console.log(Math.floor(comment.split(' ')[0]))
+                // console.log(comment.split(' '))
+                // console.log(this.props.user_id)
                 return (
                   <ul id="comment" key={key}>
-                    {comment.includes('useridcheck') ? comment.includes(this.props.user_id) ? <p>{comment.split(' ').slice(0, -1).join(' ').slice(2, -1)}
+                    {console.log(this.props.currentUser.id)}
+                    {console.log(Math.floor(comment.split(' ')[0]))}
+                    {console.log(comment)}
+                    {/* {comment.includes('useridcheck') ? comment.includes(this.props.user_id) ? <p>{comment.split(' ').slice(0, -1).join(' ').slice(2, -1)}
                       <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0,2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
-                    </p> : comment : 'hi'}
+                    </p> : console.log(comment.split(' ').slice(0, -1).join(' ').slice(2, -1)) : 'hi'} */}
+
+                    {/* {Math.floor(comment.split(' ')[1]) === this.props.user_id ?  <p>
+                      {console.log(comment.slice(0,-2))}
+                      {comment.split(' ').slice(1, -1).join(' ').slice(2, -1)} <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0, 2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
+                    </p> : comment.split(' ').slice(0, -1).join(' ').slice(2, -1)  } */}
+                    
+                    {this.props.currentUser.id === Math.floor(comment.split(' ')[1]) ? <p>
+                      <i>{comment.split(' ').slice(1, -1).join(' ').slice(2, -1)}</i>
+                      <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0, 2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
+                    </p> : comment.split(' ').slice(0, -1).join(' ').slice(2, -1)}
                   </ul>
                 )
-              })}
+              }) : this.findComments().reverse().map((comment, key) => {
+                // console.log(this.props)
+                // console.log(Math.floor(comment.split(' ')[0]))
+                // console.log(comment.split(' '))
+                // console.log(this.props.user_id)
+                return (
+                  <ul id="comment" key={key}>
+                    {/* {comment.includes('useridcheck') ? comment.includes(this.props.user_id) ? <p>{comment.split(' ').slice(0, -1).join(' ').slice(2, -1)}
+                      <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0,2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
+                    </p> : console.log(comment.split(' ').slice(0, -1).join(' ').slice(2, -1)) : 'hi'} */}
+
+                    {/* {Math.floor(comment.split(' ')[1]) === this.props.user_id ?  <p>
+                      {console.log(comment.slice(0,-2))}
+                      {comment.split(' ').slice(1, -1).join(' ').slice(2, -1)} <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0, 2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
+                    </p> : comment.split(' ').slice(0, -1).join(' ').slice(2, -1)  } */}
+
+                    {comment.split(' ').slice(0, -1).join(' ').slice(2, -1)}
+                  </ul>
+                )
+              }) }
             </div>
              <div>
             </div>

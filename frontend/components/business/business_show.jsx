@@ -201,6 +201,7 @@ class BusinessShow extends React.Component {
 
           <div className="review-show-here">
             {/* {console.log(Object.values(this.props.comments))} */}
+            {console.log(this.props)}
             {this.props.reviews.map(review => {
               return <ReviewList
               key={review.id}
@@ -211,6 +212,7 @@ class BusinessShow extends React.Component {
               deleteComment={this.props.deleteComment}
               comments={this.props.comments}
               business={this.props.business}
+              currentUser={this.props.currentUser}
               // comment={<CommentForm/>}
               />}
             )
