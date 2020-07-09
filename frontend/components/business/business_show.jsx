@@ -31,7 +31,6 @@ class BusinessShow extends React.Component {
   //       }
   //     }
   //   }
-  //   {console.log(allComments)}
   //   return allComments;
   //   })
   // }
@@ -61,7 +60,6 @@ class BusinessShow extends React.Component {
     )
 
     const businessMap = () => {
-      console.log(this.props.business.longitude)
       if (!this.props.business.longitude) {
         return "";
       } else {
@@ -69,8 +67,6 @@ class BusinessShow extends React.Component {
         const businessPosition = { lat: this.props.business.latitude, lng: this.props.business.longitude }
         const mapCenter = { lat: this.props.business.latitude, lng: this.props.business.longitude };
 
-        console.log(mapCenter)
-        console.log(businessPosition)
         return (
           <BusinessMap center={mapCenter} position={businessPosition} />
         )
@@ -220,8 +216,6 @@ class BusinessShow extends React.Component {
         <div className="reviews-list">
 
           <div className="review-show-here">
-            {/* {console.log(Object.values(this.props.comments))} */}
-            {console.log(this.props)}
             {this.props.reviews.map(review => {
               return <ReviewList
               key={review.id}

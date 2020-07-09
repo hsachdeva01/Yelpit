@@ -45,16 +45,72 @@ class BusinessMap extends React.Component {
     }
   }
   componentDidMount() {
+    let zoom = 10;
+    if(this.position) zoom = 13;
 
+    const map = {
+      center: this.center,
+      zoom: zoom,
+      marker: this.marker
+    }
+
+    this.map = new google.maps.Map(this.mapNode, map);
+    this.pos = new google.maps.LatLng(this.position.lat, this.position.lng);
+
+    this.marker = new google.maps.Marker({
+      position: this.pos,
+      map: this.map
+    });
+
+    if(this.businesses){
+      zoom = 6;
+      this.businesses.forEach(business => {
+        return (
+          this.addBusiness(business)
+        )
+      })
+    }
   }
 
   componentDidUpdate() {
-
-    if (this.props.singleBusiness) {
-      const targetBusiness = this.props.business;
-      const targetBusinessKey = Object.keys(this.props.business);
-      this.MarkerManager.updateMarkers([targetBusiness])
+    let zoom = 10;
+    if(this.position) zoom = 13;
+    const map = {
+      center: this.center,
+      marker: this.marker,
+      zoom: zoom
     }
+
+    this.map = new google.maps.Map(this.mapNode, map);
+    this.pos = new google.maps.LatLng(this.position.lat, this.position.lng);
+    this.marker = new google.maps.Marker({
+      position: this.pos,
+      map: this.map
+    });
+
+    if(this.props.businesses){
+      this.props.business.forEach(business => {
+        return (
+          this.addBusiness(business)
+        )
+      });
+    }
+  }
+
+  addBusiness(business){
+    const pos = new google.maps.LatLng(business.latitude, business.longitude)
+    const marker = new google.maps.Marker({
+      position: pos,
+      map: this.map
+    });
+
+    const info = new google.maps.InfoWindo({
+      content: business.name
+    });
+
+    marker.addListener("click", () => {
+      info.open(this.map, marker);
+    })
   }
 
   handleMarkerManager(business) {
@@ -65,7 +121,7 @@ class BusinessMap extends React.Component {
   render() {
 
     return (
-      <div className="map" ref="map">
+      <div className="map" ref={map => this.mapNode = map}>
         Map
       </div>
     );

@@ -99,24 +99,8 @@ class ReviewList extends React.Component{
               <CommentForm reviewId={this.props.review.id} />
             <div className="each-comment">
               {this.props.currentUser ? this.findComments().reverse().map((comment, key) => {
-                // console.log(this.props)
-                // console.log(Math.floor(comment.split(' ')[0]))
-                // console.log(comment.split(' '))
-                // console.log(this.props.user_id)
                 return (
-                  <ul id="comment" key={key}>
-                    {console.log(this.props.currentUser.id)}
-                    {console.log(Math.floor(comment.split(' ')[0]))}
-                    {console.log(comment)}
-                    {/* {comment.includes('useridcheck') ? comment.includes(this.props.user_id) ? <p>{comment.split(' ').slice(0, -1).join(' ').slice(2, -1)}
-                      <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0,2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
-                    </p> : console.log(comment.split(' ').slice(0, -1).join(' ').slice(2, -1)) : 'hi'} */}
-
-                    {/* {Math.floor(comment.split(' ')[1]) === this.props.user_id ?  <p>
-                      {console.log(comment.slice(0,-2))}
-                      {comment.split(' ').slice(1, -1).join(' ').slice(2, -1)} <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0, 2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
-                    </p> : comment.split(' ').slice(0, -1).join(' ').slice(2, -1)  } */}
-                    
+                  <ul id="comment" key={key}>                
                     {this.props.currentUser.id === Math.floor(comment.split(' ')[1]) ? <p>
                       <i>{comment.split(' ').slice(1, -1).join(' ').slice(2, -1)}</i>
                       <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0, 2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
@@ -124,20 +108,8 @@ class ReviewList extends React.Component{
                   </ul>
                 )
               }) : this.findComments().reverse().map((comment, key) => {
-                // console.log(this.props)
-                // console.log(Math.floor(comment.split(' ')[0]))
-                // console.log(comment.split(' '))
-                // console.log(this.props.user_id)
                 return (
                   <ul id="comment" key={key}>
-                    {/* {comment.includes('useridcheck') ? comment.includes(this.props.user_id) ? <p>{comment.split(' ').slice(0, -1).join(' ').slice(2, -1)}
-                      <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0,2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
-                    </p> : console.log(comment.split(' ').slice(0, -1).join(' ').slice(2, -1)) : 'hi'} */}
-
-                    {/* {Math.floor(comment.split(' ')[1]) === this.props.user_id ?  <p>
-                      {console.log(comment.slice(0,-2))}
-                      {comment.split(' ').slice(1, -1).join(' ').slice(2, -1)} <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0, 2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
-                    </p> : comment.split(' ').slice(0, -1).join(' ').slice(2, -1)  } */}
 
                     {comment.split(' ').slice(0, -1).join(' ').slice(2, -1)}
                   </ul>

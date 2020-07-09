@@ -78,7 +78,8 @@ class BusinessIndex extends React.Component {
               </div>
             ))}
           </div>
-          <div className="test"><BusinessMap /> </div>
+          {/* <div className="test"><BusinessMap /> </div> */}
+          {/* <div>{this.indexMap()}</div> */}
         </div>
         <div>
         </div>
