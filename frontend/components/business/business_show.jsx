@@ -174,9 +174,9 @@ class BusinessShow extends React.Component {
               <div className="business-floater">
                 <div className="business-website">
                   <i className="fas fa-chevron-right" />
-                  <Link to={`${this.props.business.website}`}>
+                  <a to={`${this.props.business.website}`}>
                     {this.props.business.website}
-                  </Link>
+                  </a>
                 </div>
                 <div className="business-phone">
                   <i className="fas fa-phone-volume" />(
