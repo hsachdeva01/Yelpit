@@ -174,7 +174,7 @@ class BusinessShow extends React.Component {
               <div className="business-floater">
                 <div className="business-website">
                   <i className="fas fa-chevron-right" />
-                  <a to={`${this.props.business.website}`}>
+                  <a target="_blank" href={`${this.props.business.website}`}>
                     {this.props.business.website}
                   </a>
                 </div>
