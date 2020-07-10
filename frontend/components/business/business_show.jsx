@@ -190,7 +190,7 @@ class BusinessShow extends React.Component {
                 </div> */}
                 <div className="business-direction">
                   <i className="fas fa-directions fa-lg"></i> 
-                  <a className="direction-map" href={`https://www.google.com/maps/@${this.props.business.latitude},${this.props.business.longitude},20z`}>
+                  <a target="_blank" className="direction-map" href={`https://www.google.com/maps/@${this.props.business.latitude},${this.props.business.longitude},20z`}>
                     Get Directions
                     </a>
                 </div>
