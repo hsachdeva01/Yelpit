@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CommentForm from '../comment/comment_container';
+import {fetchReviews, fetchReview, deleteReview} from '../../actions/review_actions'
 
 class ReviewList extends React.Component{
   constructor(props){
     super(props)
   }
 
+  
   deleteReview(){
     if (this.props.user_id === this.props.review.author_id) {
       return <button className="remove-review" onClick={() => this.props.deleteReview(this.props.review.id)}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Review</i></i></button>
