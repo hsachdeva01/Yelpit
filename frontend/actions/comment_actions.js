@@ -38,6 +38,6 @@ export const deleteComment = id => dispatch => (
   C_APIUtil.deleteComment(id)
   .then(comment => (
     dispatch(removeComment(comment))
-    .then(location.reload(), 3000)
   ))
+  .then(location.reload(), 3000)
 );
