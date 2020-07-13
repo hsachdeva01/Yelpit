@@ -20,7 +20,8 @@ const mapDispatchToProps = dispatch => ({
   fetchUsers: () => dispatch(fetchUsers()),
   deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
   deleteComment: (commentId) => dispatch(deleteComment(commentId)),
-  fetchComments: () => dispatch(fetchComments())
+  fetchComments: () => dispatch(fetchComments()),
+  fetchReviews: () => dispatch(fetchReviews())
 
 });
 

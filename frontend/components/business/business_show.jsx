@@ -17,12 +17,25 @@ class BusinessShow extends React.Component {
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchComments();
-    this.props.fetchReviews();
   }
 
-  componentDidUpdate() {
-    this.props.fetchReviews();
-  }
+  // comments(){
+  //   let comments = Object.values(this.props.comments) //array of objects
+  //   let allComments = ""
+  //   this.props.reviews.map(review => {
+  //   for(let i = 0; i < comments.length; i++){ 
+  //     let objectComment = comments[i];
+  //     for(let key in objectComment){
+  //       if(key === 'review_id' && objectComment.review_id === review.id){
+  //         allComments += objectComment.content
+  //       }
+  //     }
+  //   }
+  //   return allComments;
+  //   })
+  // }
+
+  
 
 
   render() {
