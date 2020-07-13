@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
   business: state.entities.businesses[ownProps.match.params.businessId] || {},
   reviewId: ownProps.reviewId || [],
   userId: state.session.id || [],
-  reviews: Object.values(state.entities.reviews),
+  reviews: Object.values(state.entities.reviews) || [],
   users: state.entities.users || {}
 });
 
