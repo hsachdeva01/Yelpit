@@ -7,12 +7,12 @@ export default class MarkerManager {
 
 
   updateMarkers(businesses) {
-    let businesses = {};
-    businesses.forEach(business => businesses[business.id] = business);
+    let businessObj = {};
+    businesses.forEach(business => businessObj[business.id] = business);
     let markerKeys = Object.keys(this.markers);
     markerKeys.slice();
     Object.keys(this.markers).forEach(businessId => {
-      if(!businesses[businessId]){
+      if (!businessObj[businessId]){
         let noMarker = this.markers[businessId];
         if(noMarker){
           this.removeMarker(noMarker);
@@ -29,23 +29,45 @@ export default class MarkerManager {
       let marker = this.markers[markerId];
       let markerNum = idx + 1;
       markerNum = markerNum.toString();
-      marker.setLabel(markerNum);
+      if(Object.keys(this.markers).length > 1){
+        marker.setLabel(markerNum);
+      }
     })
   }
 
   createMarkerForBusiness(business) {
-    const position = new google.maps.LatLng(business.latitude, business.longitude);
-
-      const marker = new google.maps.Marker({
-        position,
-        label: {
-          text: this.markerLabel.toString(),
-          color: "#ffffff",
-          fontWeight: "bold"
-        },
+    if(!this.markers[business.id]){
+      let latLng = { lat: business.latitude, lng: business.longitude }
+      let marker = new google.maps.Marker({
+        position: latLng,
         map: this.map,
+        animation: google.maps.Animation.DROP,
         businessId: business.id
+      })
+
+      let markerText = '<div class="info">' +
+      '<div class="info-business">' + `<p>${business.name}</p>`
+      + '</div>' + '</div>'
+
+      const info = new google.maps.InfoWindow({
+        content: markerText,
+        disableAutoPan: true
       });
-      this.markers[marker.businessId] = marker;
+
+      marker.addListener('mouseout', () => {
+        info.open(this.map, marker);
+      })
+
+      marker.addListener('mouseout', () => {
+        info.close(this.map, marker)
+      })
+
+      this.markers[business.id] = marker;
+    }
   }
+
+    removeMarker(marker){
+      marker.setMap(null);
+    }
+
 }
