@@ -54,7 +54,7 @@ export default class MarkerManager {
         disableAutoPan: true
       });
 
-      marker.addListener('mouseout', () => {
+      marker.addListener('mouseover', () => {
         info.open(this.map, marker);
       })
 
