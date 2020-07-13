@@ -99,7 +99,8 @@ class ReviewList extends React.Component{
               
             {this.props.review.body}
             </div>
-              <CommentForm reviewId={this.props.review.id} />
+            {console.log(this.props)}
+              {this.props.review.author_id !== this.props.user_id  ? <CommentForm reviewId={this.props.review.id} /> : ""}
             <div className="each-comment">
               {this.props.currentUser ? this.findComments().reverse().map((comment, key) => {
                 return (

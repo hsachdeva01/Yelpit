@@ -25,7 +25,6 @@ class CommentForm extends React.Component{
   render(){
     return(
       <form onSubmit={this.handleSubmit} className="comment-form">
-        {console.log(this.props)}
         <div className="comment-body">
           <textarea 
             value={this.state.content}
