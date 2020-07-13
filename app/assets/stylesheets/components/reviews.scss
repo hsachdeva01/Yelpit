@@ -119,9 +119,14 @@
   border:transparent;
 }
 
+.each-comment:hover .remove-comment {
+  display: inline-block;
+}
+
 .remove-comment{
+  display: none;
   color: #cc2121;
-  position: relative;
+  // position: relative;
   cursor: pointer;
   background-color: transparent;
   border:transparent;
