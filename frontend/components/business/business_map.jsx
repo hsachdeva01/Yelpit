@@ -23,6 +23,7 @@ class BusinessMap extends React.Component {
         zoom: 13,
         fullScreen: false,
         streetView: false,
+        streetViewControl: false,
         zoomControl: this.props.zoom,
         zoomOptions: {
           position: google.maps.ControlPosition.TOP_LEFT

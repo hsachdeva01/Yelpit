@@ -9,7 +9,7 @@ class Api::BusinessesController < ApplicationController
   def show 
     @business = Business.find_by(id: params[:id])
     if @business
-      render :show
+      render json: :show
     else
       render json: ["This business does not exist!"]
     end
