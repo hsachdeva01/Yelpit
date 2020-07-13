@@ -4,7 +4,6 @@ import BusinessHeader from './business_header_container';
 import Footer from '../footer/footer';
 import BusinessMap from './business_map';
 import ReviewList from '../review/review_list'
-import { fetchComments } from '../../actions/comment_actions';
 
 class BusinessShow extends React.Component {
   constructor(props) {
