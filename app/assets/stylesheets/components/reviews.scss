@@ -120,17 +120,20 @@
 }
 
 .each-comment:hover .remove-comment {
+  // position: absolute;
   display: inline-block;
 }
 
 .remove-comment{
   display: none;
   color: #cc2121;
-  // position: relative;
+  position: relative;
   cursor: pointer;
   background-color: transparent;
   border:transparent;
   float: right;
+  font-size: 12px;
+  position: absolute;
 }
 
 .trash{
