@@ -5,6 +5,24 @@ class BusinessHeader extends React.Component {
   constructor(props) {
     super(props);
   }
+  
+  handleSubmit(e) {
+    e.preventDefault();
+    let redirect = "";
+
+    if (this.state.search && this.state.location) {
+      redirect = `/businesses/search/details?keyword=${this.state.search}&location=${this.state.location}`;
+    } else if (this.state.search) {
+      redirect = `/businesses/search/details?keyword=${this.state.search}`;
+    } else if (this.state.location) {
+      redirect = `/businesses/search/details?location=${this.state.location}`;
+    } else {
+      redirect = `/businesses`;
+    }
+
+    this.props.history.push(redirect);
+
+  }
 
   render() {
     const currentUser = () => (
