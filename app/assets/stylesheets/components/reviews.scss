@@ -42,7 +42,7 @@
 
 .review-form-box > a > p{
   margin-left: 20px;
-  width: 80px;
+  // width: 80px;
 
 }
 
@@ -92,6 +92,10 @@
   padding-top: 20px;
   padding-bottom: 20px;
   display: inline-block;
+}
+
+.business-name-form > a > p {
+  margin-left: 20px;
 }
 
 .submit-review{
