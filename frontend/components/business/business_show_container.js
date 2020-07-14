@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
   users: state.entities.users || {},
   user: state.entities.users[state.session.id] || [],
   comments: Object.values(state.entities.comments) || {},
-  currentUser: state.entities.users[state.session.id]
+  currentUser: state.entities.users[state.session.id] || {}
 });
 
 const mapDispatchToProps = dispatch => ({

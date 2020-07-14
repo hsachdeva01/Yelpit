@@ -17,6 +17,7 @@ class BusinessShow extends React.Component {
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchComments();
+    this.props.fetchReviews();
   }
 
   // comments(){
@@ -40,7 +41,7 @@ class BusinessShow extends React.Component {
 
   render() {
     if(!this.props.business.photoUrls){
-      return null;
+       return null;
     }
 
     const currentUser = (this.props.user.length !== 0) ? (
@@ -60,21 +61,6 @@ class BusinessShow extends React.Component {
           </span>
         </div>
     )
-
-    // const businessMap = () => {
-    //   if (!this.props.business.longitude) {
-    //     return "";
-    //   } else {
-
-    //     const businessPosition = { lat: this.props.business.latitude, lng: this.props.business.longitude }
-    //     const mapCenter = { lat: this.props.business.latitude, lng: this.props.business.longitude };
-
-    //     return (
-    //       <BusinessMap center={mapCenter} position={businessPosition} />
-    //     )
-    //   }
-    // }
-
 
     return (
       <div className="business-show-all">
@@ -223,6 +209,7 @@ class BusinessShow extends React.Component {
         <div className="reviews-list">
 
           <div className="review-show-here">
+            {console.log(this.props)}
             {this.props.reviews.map(review => {
               return <ReviewList
               key={review.id}
@@ -235,6 +222,7 @@ class BusinessShow extends React.Component {
               comments={this.props.comments}
               business={this.props.business}
               currentUser={this.props.currentUser}
+              allUsers={this.props.user}
               // comment={<CommentForm/>}
               />}
             )

@@ -88,6 +88,7 @@ class ReviewList extends React.Component{
   render(){
     return (
       <div className="review-list">
+        {console.log(this.props)}
         <div className="user-icon">
           <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png" />
           <p className="location-sf">San Francisco, CA</p>
@@ -99,14 +100,13 @@ class ReviewList extends React.Component{
               
             {this.props.review.body}
             </div>
-              {this.props.review.author_id !== this.props.user_id  ? <CommentForm reviewId={this.props.review.id} commentAuthor={this.props.users}/> : ""}
+              {this.props.review.author_id !== this.props.user_id  ? <CommentForm reviewId={this.props.review.id}/> : ""}
             <div className="each-comment">
               {this.props.currentUser ? this.findComments().reverse().map((comment, key) => {
                 return (
                   <ul id="comment" key={key}>     
-                  {console.log(this.props)}
                   {/* <p>
-                      {this.props.users[comment.user_id] }:</p>            */}
+                      {this.props.user.first_name }:</p>            */}
                     {this.props.currentUser.id === Math.floor(comment.split(' ')[1]) ? <p>
                       <i>{comment.split(' ').slice(1, -1).join(' ').slice(2, -1)}</i>
                       <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0, 2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
