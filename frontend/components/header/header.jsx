@@ -60,6 +60,9 @@ class Header extends React.Component {
       <div className="homepage">
         <div className="header-mainpage">
           <div className="header-left">
+          <div className="write-a-review">
+            <Link to="/businesses">Write a Review</Link>
+          </div>
             <p className="github-btn">
               <a href="https://github.com/hsachdeva01">Github</a>
             </p>
@@ -69,12 +72,7 @@ class Header extends React.Component {
               </a>
             </p>
           </div>
-          <div className="right-header">
-            <div className="header-right-top">{header}</div>
-            <div className="write-a-review">
-              <Link to="/businesses">Write a Review</Link>
-            </div>
-          </div>
+          <div className="header-right-top">{header}</div>
           <div className="main">
             <div className="application-name">
               <Link to="/">Yelpit</Link>
