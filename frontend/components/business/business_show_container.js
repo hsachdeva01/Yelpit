@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BusinessShow from './business_show';
-import { fetchBusiness } from '../../actions/business_actions';
+import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
 import { fetchReviews, deleteReview } from '../../actions/review_actions';
 import { fetchUsers } from '../../actions/user_actions'
 import {fetchComments, deleteComment } from '../../actions/comment_actions'
@@ -21,7 +21,8 @@ const mapDispatchToProps = dispatch => ({
   deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
   deleteComment: (commentId) => dispatch(deleteComment(commentId)),
   fetchComments: () => dispatch(fetchComments()),
-  fetchReviews: () => dispatch(fetchReviews())
+  fetchReviews: () => dispatch(fetchReviews()),
+  fetchBusinesses: () => dispatch(fetchBusinesses())
 
 });
 

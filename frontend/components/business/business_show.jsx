@@ -18,6 +18,13 @@ class BusinessShow extends React.Component {
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchComments();
     this.props.fetchReviews();
+    // this.props.fetchUsers();
+    console.log(this.props.business.photoUrls)
+    this.props.fetchBusinesses();
+  }
+
+  componentDidUpdate(prevProps){
+
   }
 
   // comments(){
@@ -40,6 +47,7 @@ class BusinessShow extends React.Component {
 
 
   render() {
+   
     if(!this.props.business.photoUrls){
        return null;
     }

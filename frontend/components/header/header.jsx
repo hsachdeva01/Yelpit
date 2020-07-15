@@ -89,10 +89,7 @@ class Header extends React.Component {
     return (
       <div className="homepage">
         <div className="header-mainpage">
-          <div>
-
           {header}
-          </div>
           <div className="main">
             <div className="application-name">
               <Link to="/">Yelpit</Link>
