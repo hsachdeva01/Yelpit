@@ -42,37 +42,57 @@ class Header extends React.Component {
 
   render() {
     const header = (this.props.currentUser) ? (
-      <div className="header-right-logout">
-        <button className="logout" onClick={this.props.logout}>Log Out</button>
-        <div className="user"><p>Hello, {"  "} {this.props.currentUser.first_name}</p></div>
+      <header className="splash">
+        <div className="header-left">
+        <p className="write-a-review">
+          <Link to="/businesses">Write a Review</Link>
+        </p>
+        <p className="github-btn">
+          <a href="https://github.com/hsachdeva01">Github</a>
+        </p>
+        <p className="linkedin-btn">
+          <a href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/">
+            Linkedin
+           </a>
+        </p>
       </div>
+      <div className="header-right-logout">
+        <p className="welcome-user">Hello, {"  "} {this.props.currentUser.first_name}</p>
+        <button className="logout" onClick={this.props.logout}>Log Out</button>
+      </div>
+      </header>
     ) : (
-        <div className="header-right">
-          <p className="login">
-            <Link to="/login">Log In</Link>
+      <header className="splash">
+        <div className="header-left">
+          <p className="write-a-review">
+            <Link to="/businesses">Write a Review</Link>
           </p>
-          <p className="signup">
-            <Link to="/signup">Sign Up</Link>
+          <p className="github-btn">
+            <a href="https://github.com/hsachdeva01">Github</a>
+          </p>
+          <p className="linkedin-btn">
+            <a href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/">
+              Linkedin
+              </a>
           </p>
         </div>
+        <div className="header-right-logout">
+            <p className="welcome-user">
+            <Link clssName="login" to="/login">Log In <p>          </p></Link>
+          </p>
+          <button className="signup">
+            <Link to="/signup">Sign Up</Link>
+            </button>
+        </div>
+        </header>
       );
     return (
       <div className="homepage">
         <div className="header-mainpage">
-          <div className="header-left">
-          <div className="write-a-review">
-            <Link to="/businesses">Write a Review</Link>
+          <div>
+
+          {header}
           </div>
-            <p className="github-btn">
-              <a href="https://github.com/hsachdeva01">Github</a>
-            </p>
-            <p className="linkedin-btn">
-              <a href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/">
-                Linkedin
-              </a>
-            </p>
-          </div>
-          <div className="header-right-top">{header}</div>
           <div className="main">
             <div className="application-name">
               <Link to="/">Yelpit</Link>

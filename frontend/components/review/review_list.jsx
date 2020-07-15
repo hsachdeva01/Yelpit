@@ -88,7 +88,6 @@ class ReviewList extends React.Component{
   render(){
     return (
       <div className="review-list">
-        {console.log(this.props)}
         <div className="user-icon">
           <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png" />
           <p className="location-sf">San Francisco, CA</p>
