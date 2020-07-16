@@ -90,6 +90,8 @@ class Header extends React.Component {
       <div className="homepage">
         <div className="header-mainpage">
           {header}
+          <div>
+
           <div className="main">
             <div className="application-name">
               <Link to="/">Yelpit</Link>
@@ -125,6 +127,7 @@ class Header extends React.Component {
               </div>
             </form>
 
+          </div>
 
           </div>
         </div>

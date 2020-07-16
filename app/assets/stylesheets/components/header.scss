@@ -114,7 +114,8 @@ display: inline-block;
 .header-left{
   float: left;
   justify-content: space-between;
-  height: 10px;
+  height: 40px;
+  background: red;
 }
 
 .logout{
@@ -274,16 +275,17 @@ display: inline-block;
 .header-right-logout{
   float: right;
   justify-content: space-between;
-  height: 10px;
+  height: 40px;
   margin-right: 20px;
   display: inline-block;
+  background: green;
 }
 
 .splash{
-  position: fixed;
-  display: contents;
+  position: absolute;
+  width: 100%;
   height: 40px;
-  // background: blue;
+  background: blue;
 }
 
 .login{
