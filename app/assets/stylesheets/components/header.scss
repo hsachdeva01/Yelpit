@@ -119,13 +119,14 @@ display: inline-block;
 }
 
 .logout{
-  color: white;
-  margin-top: 30px;
-  display: inline-block;
-  background-color: transparent;
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px 25px 10px; 
+    background-color: transparent;
+    background-color: transparent;
 }
 
 .logout:hover{
