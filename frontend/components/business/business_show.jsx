@@ -18,8 +18,6 @@ class BusinessShow extends React.Component {
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchComments();
     this.props.fetchReviews();
-    // this.props.fetchUsers();
-    console.log(this.props.business.photoUrls)
     this.props.fetchBusinesses();
   }
 
@@ -217,7 +215,6 @@ class BusinessShow extends React.Component {
         <div className="reviews-list">
 
           <div className="review-show-here">
-            {console.log(this.props)}
             {this.props.reviews.map(review => {
               return <ReviewList
               key={review.id}
