@@ -5,7 +5,7 @@ import BusinessIndex from "./business_index";
 
 const mapStateToProps = state => ({
   business: Object.values(state.entities.businesses) || [],
-  // businessId: ownProps.props.match.params.businessId
+  // businessId: ownProps.props.match.params.businessId 
 });
 
 const mapDispatchToProps = dispatch => ({

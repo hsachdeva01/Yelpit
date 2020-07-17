@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const BusinessIndexItem = props => (
   <div className="business-index-item">
     <Link className="business-photo" to={`/businesses/${props.business.id}`}>
-      <img src={props.business.photoUrls[0]}/>
+      <img src={props.business.photoUrls ? props.business.photoUrls[0] : null}/>
     </Link>
     <div className="name">
       <Link className="business-name" to={`/businesses/${props.business.id}`}>

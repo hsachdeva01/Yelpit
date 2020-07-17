@@ -15,7 +15,6 @@ class BusinessIndex extends React.Component {
   componentDidMount() {
     // window.scrollTo(0, 0);
     this.props.fetchBusinesses();
-
   }
 
   componentWillReceiveProps(props) {
@@ -71,7 +70,7 @@ class BusinessIndex extends React.Component {
           {/* <BusinessMap /> */}
           <div className="individual-business">
             {this.state.business.map((business, idx) => (
-              <div key={idx}>
+              <div key={idx + 1}>
                 <BusinessIndexItem
                   business={business}
                 />
