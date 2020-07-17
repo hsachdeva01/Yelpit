@@ -88,10 +88,10 @@ class BusinessHeader extends React.Component {
             </span>
         </form>
         <div className="user-not-logged-in">
-          <p className="login">
+          <p className="login-business">
             <Link to="/login">Log In</Link>
           </p>
-          <p className="signup">
+          <p className="signup-business">
             <Link to="/signup">Sign Up</Link>
           </p>
         </div>
