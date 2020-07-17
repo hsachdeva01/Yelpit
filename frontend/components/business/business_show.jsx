@@ -18,11 +18,8 @@ class BusinessShow extends React.Component {
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchComments();
     this.props.fetchReviews();
+    this.props.fetchReview(this.props.match.params.reviewId);
     this.props.fetchBusinesses();
-  }
-
-  componentDidUpdate(prevProps){
-
   }
 
   // comments(){
@@ -216,6 +213,8 @@ class BusinessShow extends React.Component {
 
           <div className="review-show-here">
             {this.props.reviews.map(review => {
+              console.log(this.props)
+              if(this.props.business.id === review.business_id){
               return <ReviewList
               key={review.id}
               review={review}
@@ -229,7 +228,7 @@ class BusinessShow extends React.Component {
               currentUser={this.props.currentUser}
               allUsers={this.props.user}
               // comment={<CommentForm/>}
-              />}
+              />}}
             )
             }
             <div>
