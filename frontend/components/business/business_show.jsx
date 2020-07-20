@@ -20,6 +20,7 @@ class BusinessShow extends React.Component {
     this.props.fetchReviews();
     this.props.fetchReview(this.props.match.params.reviewId);
     this.props.fetchBusinesses();
+    this.props.fetchUsers();
   }
 
   // comments(){
