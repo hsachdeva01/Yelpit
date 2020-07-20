@@ -48,10 +48,10 @@ class Header extends React.Component {
           <Link to="/businesses">Write a Review</Link>
         </p>
         <p className="github-btn">
-          <a href="https://github.com/hsachdeva01">Github</a>
+            <a target="_blank" href="https://github.com/hsachdeva01">Github</a>
         </p>
         <p className="linkedin-btn">
-          <a href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/">
+            <a target="_blank" href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/">
             Linkedin
            </a>
         </p>
@@ -68,10 +68,10 @@ class Header extends React.Component {
             <Link to="/businesses">Write a Review</Link>
           </p>
           <p className="github-btn">
-            <a href="https://github.com/hsachdeva01">Github</a>
+              <a target="_blank" href="https://github.com/hsachdeva01">Github</a>
           </p>
           <p className="linkedin-btn">
-            <a href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/">
+              <a target="_blank" href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/">
               Linkedin
               </a>
           </p>
