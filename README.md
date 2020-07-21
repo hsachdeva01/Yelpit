@@ -30,7 +30,11 @@ Yelpit is a single page application inspired by Yelp. A website where you can fi
 * Users can create a new account.
 * A log in demo is availble for visitors to browse around the website.
 
-### Reviews
 
-* Users can review and rate their experience with a business. 
+### Business Page
 
+* The Business Page has set of photos of each business that is being hosted my AWS S3.
+* It also uses Google API that pin points exactly where the restaurant is located based on longitude and latitude. 
+* The user can review and rate their experience with the business.
+
+![](/app/assets/images/Yelpit-BusinessShow.gif)
