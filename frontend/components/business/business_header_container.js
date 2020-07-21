@@ -3,7 +3,6 @@ import BusinessHeader from "./business_header";
 import { logout } from "../../actions/session_actions"
 
 const mapStateToProps = (state) => ({
-  // currentUser: entities.users[session.id]
   currentUser: state.entities.users[state.session.id]
 });
 
