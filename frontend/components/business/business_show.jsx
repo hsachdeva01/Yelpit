@@ -53,7 +53,6 @@ class BusinessShow extends React.Component {
           <div className="business-header">
             <BusinessHeader />
           </div>
-          {/* </div> */}
           <div className="business-picture">
             {this.props.business.photoUrls.map((photo, idx) => (
               <img src={photo} key={idx} />
@@ -100,7 +99,6 @@ class BusinessShow extends React.Component {
                     <div className="location">
                       {/* <BusinessMap cords={{ lat: this.props.business.latitude, long: this.props.business.longitude }} /> */}
                       <div className='show-map'>
-                        {/* {businessMap()} */}
                         <BusinessMap
                           businesses={[this.props.business]}
                           type="show"
@@ -195,7 +193,6 @@ class BusinessShow extends React.Component {
 
           <div className="review-show-here">
             {this.props.reviews.map(review => {
-              console.log(this.props)
               if(this.props.business.id === review.business_id){
               return <ReviewList
               key={review.id}
@@ -214,7 +211,6 @@ class BusinessShow extends React.Component {
             )
             }
             <div>
-              {/* {this.comments()} */}
             </div>
           </div>
         </div>
