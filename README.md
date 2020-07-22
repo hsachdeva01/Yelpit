@@ -30,6 +30,31 @@ Yelpit is a single page application inspired by Yelp. A website where you can fi
 * Users can create a new account.
 * A demo login is availble for visitors to browse around the website.
 
+```
+  demoLogin() {
+    const email = this.demoEmail;
+    const password = this.demoPassword;
+    const Speed = 35;
+
+    document.getElementById("demo-button").disabled = true;
+    this.setState({ email: "", password: "" });
+
+    for (let i = 0; i < email.length; i++) {
+      setTimeout(() => {
+        this.setState({ email: this.state.email + email[i] });
+      }, i * Speed);
+    }
+    for (let j = 0; j < password.length; j++) {
+      setTimeout(() => {
+        this.setState({ password: this.state.password + password[j] });
+      }, (email.length * Speed) + j * Speed);
+    }
+    setTimeout(() => {
+      this.props.processForm(this.state).then(() => this.props.history.push("/"));
+    }, (email.length * Speed) + (password.length * Speed) + Speed);
+
+  }
+```
 
 ### Business Page
 
