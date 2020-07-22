@@ -63,3 +63,16 @@ Yelpit is a single page application inspired by Yelp. A website where you can fi
 * The user can review and rate their experience with the business.
 
 ![](/app/assets/images/Yelpit-BusinessShow.gif)
+
+```
+<div className="business-header">
+  <BusinessHeader />
+ </div>
+ 
+<div className="business-picture">
+  {this.props.business.photoUrls.map((photo, idx) => (
+    <img src={photo} key={idx} />
+  ))}
+</div>
+```
+         
