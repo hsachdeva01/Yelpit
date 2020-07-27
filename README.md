@@ -26,7 +26,7 @@ Yelpit is a single page application inspired by Yelp. A website where you can fi
 
 ### User Authentication
 ![](/app/assets/images/Yelpit-UserAuth.gif)
-* Users have limited access to features without logging in .
+* Users have limited access to features without logging in.
 * Users can create a new account.
 * A demo login is availble for visitors to browse around the website.
 
