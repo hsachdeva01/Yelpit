@@ -15,7 +15,7 @@ Yelpit is a single page application inspired by Yelp. A website where you can fi
 * Ruby on Rails (Backend)
 * PostgresSql
 * AWS
-* HTML and CSS
+* HTML5 and CSS3
 
 ## API
 
