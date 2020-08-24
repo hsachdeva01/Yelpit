@@ -104,8 +104,6 @@ class ReviewList extends React.Component{
               {this.props.currentUser ? this.findComments().reverse().map((comment, key) => {
                 return (
                   <ul id="comment" key={key}>     
-                  {/* <p>
-                      {this.props.user.first_name }:</p>            */}
                     {this.props.currentUser.id === Math.floor(comment.split(' ')[1]) ? <p>
                       <i>{comment.split(' ').slice(1, -1).join(' ').slice(2, -1)}</i>
                       <button className="remove-comment" onClick={() => this.props.deleteComment(Math.floor(comment.slice(0, 2)))}><i className="fa fa-trash-alt" aria-hidden="true"><i className='trash'>Remove Comment</i></i></button>
