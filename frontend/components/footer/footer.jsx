@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const footer = () => (
   <div className="footer">
     <div className="footer-container">
-      <a className="github-btn-footer" href="https://github.com/hsachdeva01">
+      <a className="github-btn-footer" target="_blank" href="https://github.com/hsachdeva01">
         <i className="fab fa-github" />
       </a>
       <a
         className="linkedin-btn-footer"
-        href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/"
+        target="_blank" href="https://www.linkedin.com/in/hari-sachdeva-8748051a6/"
       >
         <i className="fab fa-linkedin" />
       </a>
