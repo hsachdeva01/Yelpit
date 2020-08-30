@@ -48,7 +48,6 @@ class BusinessIndex extends React.Component {
 
 
   render() {
-    debugger
     return (
       <div>
         <div className="business-header-import">
