@@ -48,7 +48,7 @@ class BusinessIndex extends React.Component {
 
 
   render() {
-
+    debugger
     return (
       <div>
         <div className="business-header-import">
@@ -56,15 +56,6 @@ class BusinessIndex extends React.Component {
         </div>
         <div className="business-div-box">
           <p id="browsing-sf">Browsing San Francisco, CA Businesses</p>
-          {/* <div className="business-index-prie-range">
-            <i className="fas fa-dollar-sign" /> Price Range{" "}
-            <ul className="price-range-dropdown">
-              <li onClick={() => this.update("$")}>$</li>
-              <li onClick={() => this.update("$$")}>$$</li>
-              <li onClick={() => this.update("$$$")}>$$$</li>
-              <li onClick={() => this.update("$$$$")}>$$$$</li>
-            </ul>
-          </div> */}
         </div>
         <div className="business-item-render">
           {/* <BusinessMap /> */}
