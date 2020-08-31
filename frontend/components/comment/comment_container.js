@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CommentForm from './comment_form';
 import { fetchUsers } from '../../actions/user_actions'
-import { createComment, receiveComments } from '../../actions/comment_actions';
+import { createComment } from '../../actions/comment_actions';
 import { fetchComments } from '../../util/comments_api_util';
-import { fetchReviews, deleteReview } from '../../actions/review_actions';
+import { fetchReviews } from '../../actions/review_actions';
 
 
 const mapStateToProps = (state, ownProps) => ({
