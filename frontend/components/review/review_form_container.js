@@ -12,13 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
   user: state.entities.users[state.session.id],
   business: state.entities.businesses[ownProps.match.params.businessId] || {},
   errors: state.errors.session
-})
-
-// const mapStateToProps = (state, ownProps) => (
-//   {
-//   //business: state.entities.businesses[ownProps.match.params.businessId] || {},
-//   business: state.entities.businesses[ownProps.match.params.businessId] || {},
-// });
+});
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -27,9 +21,5 @@ const mapDispatchToProps = dispatch => {
     clearReviewErrors: () => dispatch(clearErrors([]))
   };
 };
-
-// const mapDispatchToProps = dispatch => ({
-//   fetchBusiness: id => dispatch(fetchBusiness(id))
-// });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm)
