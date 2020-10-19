@@ -35,6 +35,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.logout = Action.logout;
   window.fetchComments = CommentAction.fetchComments;
-
-  // window.fetchBusinesses = B_Actions.fetchBusinesses;
 });
