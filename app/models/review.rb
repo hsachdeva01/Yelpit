@@ -1,5 +1,4 @@
 class Review < ApplicationRecord
-
   validates :body, :rating, presence: true
   
   belongs_to :user,
@@ -13,5 +12,4 @@ class Review < ApplicationRecord
   foreign_key: :review_id,
   class_name: :Comment,
   dependent: :destroy
-  
 end
