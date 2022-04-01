@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  validates :body, :rating, presence: true
+  validates :body, :rating, presence: true, uniqueness: true
   
   belongs_to :user,
     primary_key: :id,
